@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/Reveal";
+import { BeforeAfter } from "@/components/BeforeAfter";
 import heroMri from "@/assets/hero-mri.jpg";
+import mriBefore from "@/assets/mri-before.jpg";
+import mriAfter from "@/assets/mri-after.jpg";
 import logo from "@/assets/turbomr-logo.jpeg";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
@@ -93,6 +96,7 @@ const faqs = [
 const navLinks = [
   { href: "#solucao", label: "Solução" },
   { href: "#tecnologia", label: "Tecnologia" },
+  { href: "#comparativo", label: "Antes/Depois" },
   { href: "#casos", label: "Resultados" },
   { href: "#planos", label: "Planos" },
   { href: "#faq", label: "FAQ" },
