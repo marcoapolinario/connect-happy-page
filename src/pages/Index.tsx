@@ -350,6 +350,55 @@ const Index = () => {
         </div>
       </section>
 
+      {/* BEFORE / AFTER COMPARISON */}
+      <section id="comparativo" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary/10 blur-3xl animate-float" />
+        <div className="relative max-w-7xl mx-auto">
+          <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Comparativo Visual</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Antes vs. <span className="gradient-text">Depois</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Arraste o controle para comparar a aquisição rápida (com ruído) e o resultado final processado pela IA do TurboMR.
+            </p>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+            <Reveal className="lg:col-span-3">
+              <BeforeAfter
+                beforeSrc={mriBefore}
+                afterSrc={mriAfter}
+                beforeLabel="Aquisição rápida"
+                afterLabel="TurboMR IA"
+                alt="Comparativo de ressonância magnética cerebral antes e depois do processamento TurboMR"
+              />
+            </Reveal>
+
+            <Reveal delay={150} className="lg:col-span-2 space-y-5">
+              {[
+                { icon: Sparkles, t: "Ruído reduzido", d: "Advanced Denoise elimina o ruído da aquisição acelerada sem apagar detalhes anatômicos." },
+                { icon: Zap, t: "Resolução recuperada", d: "Super-resolução reconstrói matriz e bordas finas, revelando estruturas sutis." },
+                { icon: CheckCircle2, t: "Diagnóstico mais claro", d: "Imagem final com nitidez e contraste superiores, pronta para laudo no PACS." },
+              ].map((b) => (
+                <div key={b.t} className="flex gap-4 p-5 rounded-xl bg-card border border-border/50 shadow-card hover-lift">
+                  <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shrink-0 shadow-glow">
+                    <b.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">{b.t}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
+                  </div>
+                </div>
+              ))}
+              <p className="text-xs text-muted-foreground italic px-1">
+                * Imagens ilustrativas para demonstração do efeito do pipeline.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* RESULTS / CASES */}
       <section id="casos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/40">
         <div className="max-w-7xl mx-auto">
