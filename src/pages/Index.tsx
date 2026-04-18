@@ -275,9 +275,9 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary-glow uppercase tracking-wider mb-3">Core Technology</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Pipeline sequencial de redes neurais.</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">O que a IA pode fazer para sua Ressonância?</h2>
             <p className="text-base sm:text-lg text-white/70">
-              Transforma a aquisição acelerada em imagem diagnóstica premium em ~2 minutos por série.
+              Transforma a aquisição de exames inteiros com redução de tempo — imagine fazer uma coluna lombar com menos de 5 minutos em equipamentos de 1,5T!
             </p>
           </Reveal>
 
