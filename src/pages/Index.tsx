@@ -562,12 +562,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="TurboMR" width={48} height={48} className="h-10 w-10 object-contain" />
-            <span className="text-xl font-extrabold tracking-tight text-white">
-              Turbo<span className="text-primary-glow">MR</span>
-            </span>
-          </div>
+          <img src={logo} alt="TurboMR" className="h-10 w-auto object-contain brightness-0 invert" />
           <div className="text-sm text-center md:text-right">
             <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
               <MessageCircle className="w-4 h-4" />
