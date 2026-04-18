@@ -6,7 +6,7 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
-import logo from "@/assets/turbomr-logo.jpeg";
+import logo from "@/assets/turbomr-icon.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
@@ -114,10 +114,13 @@ const Index = () => {
             <img
               src={logo}
               alt="TurboMR logo"
-              width={140}
-              height={40}
-              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+              width={56}
+              height={56}
+              className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
             />
+            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
+              Turbo<span className="text-primary">MR</span>
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
@@ -564,7 +567,12 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src={logo} alt="TurboMR" width={140} height={40} className="h-9 w-auto object-contain bg-white/95 rounded-md px-3 py-1" />
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="TurboMR" width={48} height={48} className="h-10 w-10 object-contain" />
+            <span className="text-xl font-extrabold tracking-tight text-white">
+              Turbo<span className="text-primary-glow">MR</span>
+            </span>
+          </div>
           <div className="text-sm text-center md:text-right">
             <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
               <MessageCircle className="w-4 h-4" />
