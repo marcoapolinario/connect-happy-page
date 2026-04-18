@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
+import { ResultsShowcase } from "@/components/ResultsShowcase";
 import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
@@ -462,6 +463,31 @@ const Index = () => {
           <Reveal>
             <p className="text-center text-sm text-muted-foreground mt-6 max-w-2xl mx-auto">
               Com exames <span className="font-semibold text-foreground">50% mais rápidos</span>, sua agenda ganha flexibilidade para encaixes, urgências e menos horas extras.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* PROVEN RESULTS — IMAGE COMPARISONS */}
+      <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Resultados Comprovados em Imagens</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Veja a diferença, <span className="gradient-text">série por série</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Casos clínicos reais comparando o protocolo padrão (Rotina) ao processamento TurboMR — mesma anatomia, mesmo paciente, em uma fração do tempo.
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <ResultsShowcase />
+          </Reveal>
+
+          <Reveal>
+            <p className="text-center text-xs text-muted-foreground mt-8 italic">
+              Imagens reais de casos de validação clínica — Mar/2026.
             </p>
           </Reveal>
         </div>
