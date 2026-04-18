@@ -6,7 +6,7 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
-import logo from "@/assets/turbomr-icon.png";
+import logo from "@/assets/turbomr-wordmark.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
@@ -110,17 +110,12 @@ const Index = () => {
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/85 border-b border-border">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 group" aria-label="TurboMR">
+          <a href="#" className="flex items-center group" aria-label="TurboMR">
             <img
               src={logo}
-              alt="TurboMR logo"
-              width={56}
-              height={56}
-              className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
+              alt="TurboMR"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground">
-              Turbo<span className="text-primary">MR</span>
-            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
