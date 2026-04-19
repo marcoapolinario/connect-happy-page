@@ -7,6 +7,12 @@ import { ResultsShowcase } from "@/components/ResultsShowcase";
 import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
+import featureNoiseBefore from "@/assets/results/cervical-s2-original.jpg";
+import featureNoiseAfter from "@/assets/results/cervical-s2-turbo.jpg";
+import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
+import featureResAfter from "@/assets/results/joelho-s1-turbo.jpg";
+import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
+import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
 import logo from "@/assets/turbomr-wordmark.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
@@ -359,42 +365,62 @@ const Index = () => {
               Antes vs. <span className="gradient-text">Depois</span>
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground">
-              Arraste o controle para comparar a aquisição rápida (com ruído) e o resultado final processado pela IA do TurboMR.
+              Três ganhos que aparecem em cada exame processado pelo TurboMR. Arraste o controle de cada imagem para comparar.
             </p>
           </Reveal>
 
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-            <Reveal className="lg:col-span-3">
-              <BeforeAfter
-                beforeSrc={mriBefore}
-                afterSrc={mriAfter}
-                beforeLabel="Aquisição rápida"
-                afterLabel="TurboMR IA"
-                alt="Comparativo de ressonância magnética cerebral antes e depois do processamento TurboMR"
-              />
-            </Reveal>
-
-            <Reveal delay={150} className="lg:col-span-2 space-y-5">
-              {[
-                { icon: Sparkles, t: "Ruído reduzido", d: "Advanced Denoise elimina o ruído da aquisição acelerada sem apagar detalhes anatômicos." },
-                { icon: Zap, t: "Resolução recuperada", d: "Super-resolução reconstrói matriz e bordas finas, revelando estruturas sutis." },
-                { icon: CheckCircle2, t: "Diagnóstico mais claro", d: "Imagem final com nitidez e contraste superiores, pronta para laudo no PACS." },
-              ].map((b) => (
-                <div key={b.t} className="flex gap-4 p-5 rounded-xl bg-card border border-border/50 shadow-card hover-lift">
-                  <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shrink-0 shadow-glow">
-                    <b.icon className="w-5 h-5 text-white" />
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                icon: Sparkles,
+                title: "Ruído reduzido",
+                desc: "Advanced Denoise elimina o ruído da aquisição acelerada sem apagar detalhes anatômicos.",
+                before: featureNoiseBefore,
+                after: featureNoiseAfter,
+                alt: "Comparativo de ruído em RM cervical",
+              },
+              {
+                icon: Zap,
+                title: "Resolução recuperada",
+                desc: "Super-resolução reconstrói matriz e bordas finas, revelando estruturas sutis.",
+                before: featureResBefore,
+                after: featureResAfter,
+                alt: "Comparativo de resolução em RM de joelho",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Diagnóstico mais claro",
+                desc: "Imagem final com nitidez e contraste superiores, pronta para laudo no PACS.",
+                before: featureDiagBefore,
+                after: featureDiagAfter,
+                alt: "Comparativo de nitidez em RM lombar",
+              },
+            ].map((f, i) => (
+              <Reveal key={f.title} delay={i * 120}>
+                <Card className="p-6 shadow-card hover-lift border-border/50 h-full flex flex-col">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center shrink-0 shadow-glow">
+                      <f.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold">{f.title}</h3>
                   </div>
-                  <div>
-                    <h4 className="font-bold mb-1">{b.t}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
-                  </div>
-                </div>
-              ))}
-              <p className="text-xs text-muted-foreground italic px-1">
-                * Imagens ilustrativas para demonstração do efeito do pipeline.
-              </p>
-            </Reveal>
+                  <BeforeAfter
+                    beforeSrc={f.before}
+                    afterSrc={f.after}
+                    beforeLabel="Rotina"
+                    afterLabel="TurboMR"
+                    alt={f.alt}
+                    className="mb-4"
+                  />
+                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                </Card>
+              </Reveal>
+            ))}
           </div>
+
+          <p className="text-xs text-muted-foreground italic text-center mt-8">
+            * Imagens reais de POC. Arraste o divisor para comparar.
+          </p>
         </div>
       </section>
 
