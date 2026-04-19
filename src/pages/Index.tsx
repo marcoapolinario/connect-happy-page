@@ -615,7 +615,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src={logo} alt="TurboMR" className="h-10 w-auto object-contain" />
+          <img src={logo} alt="TurboMR" className="h-10 w-auto object-contain brightness-0 invert" />
           <div className="text-sm text-center md:text-right">
             <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
               <MessageCircle className="w-4 h-4" />
