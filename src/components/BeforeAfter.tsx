@@ -8,6 +8,7 @@ interface BeforeAfterProps {
   afterLabel?: string;
   alt?: string;
   className?: string;
+  imageFit?: "cover" | "contain";
 }
 
 export const BeforeAfter = ({
@@ -17,10 +18,12 @@ export const BeforeAfter = ({
   afterLabel = "Depois",
   alt = "Comparativo antes e depois",
   className,
+  imageFit = "cover",
 }: BeforeAfterProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
   const draggingRef = useRef(false);
+  const imageFitClass = imageFit === "contain" ? "object-contain" : "object-cover";
 
   const updateFromClientX = useCallback((clientX: number) => {
     const el = containerRef.current;
@@ -74,20 +77,19 @@ export const BeforeAfter = ({
         if (e.key === "ArrowRight") setPos((p) => Math.min(100, p + 5));
       }}
     >
-      {/* AFTER (full) */}
       <img
         src={afterSrc}
         alt={`${alt} - depois`}
         loading="lazy"
         width={1024}
         height={1024}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        className={cn("absolute inset-0 w-full h-full pointer-events-none", imageFitClass)}
         draggable={false}
       />
-      {/* BEFORE (clipped) */}
+
       <div
-        className="absolute inset-0 overflow-hidden pointer-events-none"
-        style={{ width: `${pos}%` }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <img
           src={beforeSrc}
@@ -95,13 +97,11 @@ export const BeforeAfter = ({
           loading="lazy"
           width={1024}
           height={1024}
-          className="absolute inset-0 h-full w-auto max-w-none object-cover"
-          style={{ width: containerRef.current?.clientWidth ?? "100%" }}
+          className={cn("absolute inset-0 w-full h-full pointer-events-none", imageFitClass)}
           draggable={false}
         />
       </div>
 
-      {/* Labels */}
       <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider">
         {beforeLabel}
       </div>
@@ -109,7 +109,6 @@ export const BeforeAfter = ({
         {afterLabel}
       </div>
 
-      {/* Divider + handle */}
       <div
         className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] pointer-events-none"
         style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
