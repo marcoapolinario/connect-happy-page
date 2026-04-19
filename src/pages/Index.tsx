@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "5511530443453";
+const WHATSAPP_NUMBER = "551153043453";
 const WHATSAPP_DISPLAY = "(11) 5304-3453";
 const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
@@ -196,14 +196,14 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
                 <Button asChild size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold animate-pulse-glow">
-                  <a href={waLink("Olá! Tenho interesse no teste gratuito de 15 dias do TurboMR.")} target="_blank" rel="noopener">
+                  <a href={waLink("Olá! Gostaria de solicitar uma demonstração do TurboMR.")} target="_blank" rel="noopener">
                     <MessageCircle className="w-5 h-5" />
-                    Teste 15 dias grátis
+                    Solicitar demonstração
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
-                  <a href="#solucao">
-                    Ver como funciona
+                  <a href={waLink("Olá! Tenho interesse no teste gratuito de 15 dias do TurboMR.")} target="_blank" rel="noopener">
+                    Teste 15 dias grátis
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
