@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
+import { BeforeAfter } from "@/components/BeforeAfter";
 
 // Cervical
 import cervicalS1Orig from "@/assets/results/cervical-s1-original.jpg";
@@ -147,7 +148,6 @@ export const ResultsShowcase = () => {
 
       {exams.map((exam) => (
         <TabsContent key={exam.id} value={exam.id} className="mt-0 animate-fade-in">
-          {/* Stats bar */}
           <Card className="p-5 sm:p-6 mb-6 border-border/50 shadow-card">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-center">
               <div>
@@ -169,36 +169,22 @@ export const ResultsShowcase = () => {
             </div>
           </Card>
 
-          {/* Series comparisons */}
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
             {exam.series.map((s) => (
               <Card key={s.label} className="overflow-hidden border-border/50 shadow-card hover-lift">
                 <div className="px-4 py-3 bg-muted/60 border-b border-border">
                   <h4 className="font-bold text-sm sm:text-base">{s.label}</h4>
                 </div>
-                <div className="grid grid-cols-2 bg-black">
-                  <div className="relative">
-                    <img
-                      src={s.original}
-                      alt={`${exam.name} ${s.label} - protocolo padrão (Original)`}
-                      loading="lazy"
-                      className="w-full h-full object-cover aspect-square"
-                    />
-                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-destructive/90 text-destructive-foreground text-[10px] font-bold uppercase tracking-wider">
-                      Rotina
-                    </div>
-                  </div>
-                  <div className="relative border-l-2 border-primary">
-                    <img
-                      src={s.turbo}
-                      alt={`${exam.name} ${s.label} - processado com TurboMR`}
-                      loading="lazy"
-                      className="w-full h-full object-cover aspect-square"
-                    />
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider shadow-glow">
-                      TurboMR
-                    </div>
-                  </div>
+                <div className="p-3 sm:p-4 bg-card">
+                  <BeforeAfter
+                    beforeSrc={s.original}
+                    afterSrc={s.turbo}
+                    beforeLabel="Rotina"
+                    afterLabel="TurboMR"
+                    alt={`${exam.name} ${s.label} - comparativo Rotina vs TurboMR`}
+                    imageFit="contain"
+                    className="aspect-[4/3] sm:aspect-square"
+                  />
                 </div>
               </Card>
             ))}
