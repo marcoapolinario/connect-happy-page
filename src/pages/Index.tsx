@@ -220,13 +220,13 @@ const Index = () => {
 
             <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: "0.3s" }}>
               <div className="absolute -inset-4 gradient-primary rounded-3xl blur-2xl opacity-40 animate-pulse-glow" />
-              <img
-                src={heroMri}
-                alt="Visualização de ressonância magnética cerebral processada com IA TurboMR"
-                width={1536}
-                height={1024}
-                className="relative rounded-2xl shadow-elegant w-full"
-              />
+              <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+                <BeforeAfter
+                  beforeSrc={mriBefore}
+                  afterSrc={mriAfter}
+                  alt="Comparativo RM acelerada vs processada com TurboMR"
+                />
+              </div>
             </div>
           </div>
         </div>
