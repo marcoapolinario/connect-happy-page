@@ -231,6 +231,7 @@ const Index = () => {
                   beforeSrc={mriBefore}
                   afterSrc={mriAfter}
                   alt="Comparativo RM acelerada vs processada com TurboMR"
+                  imageFit="contain"
                 />
               </div>
             </div>
