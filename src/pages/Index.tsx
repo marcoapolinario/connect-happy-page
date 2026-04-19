@@ -224,8 +224,7 @@ const Index = () => {
                 <BeforeAfter
                   beforeSrc={mriBefore}
                   afterSrc={mriAfter}
-                  beforeAlt="RM com aquisição acelerada (ruído)"
-                  afterAlt="RM processada com TurboMR (alta qualidade)"
+                  alt="Comparativo RM acelerada vs processada com TurboMR"
                 />
               </div>
             </div>
