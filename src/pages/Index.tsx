@@ -13,7 +13,7 @@ import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
 import featureResAfter from "@/assets/results/joelho-s1-turbo.jpg";
 import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
 import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
-import logo from "@/assets/turbomr-wordmark.png";
+import logo from "@/assets/turbomr-logo-upload.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
@@ -121,7 +121,7 @@ const Index = () => {
             <img
               src={logo}
               alt="TurboMR"
-              className="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 
@@ -615,7 +615,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src={logo} alt="TurboMR" className="h-8 w-auto object-contain brightness-0 invert" />
+          <img src={logo} alt="TurboMR" className="h-10 w-auto object-contain" />
           <div className="text-sm text-center md:text-right">
             <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
               <MessageCircle className="w-4 h-4" />
