@@ -61,7 +61,7 @@ export const BeforeAfter = ({
     <div
       ref={containerRef}
       className={cn(
-        "relative w-full aspect-square overflow-hidden rounded-2xl select-none shadow-elegant border border-border/50 bg-black cursor-ew-resize touch-none",
+        "relative w-full aspect-square overflow-hidden rounded-2xl select-none shadow-elegant border border-border/50 bg-card cursor-ew-resize touch-none",
         className,
       )}
       onMouseDown={(e) => startDrag(e.clientX)}
@@ -110,11 +110,11 @@ export const BeforeAfter = ({
       </div>
 
       <div
-        className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] pointer-events-none"
+        className="absolute top-0 bottom-0 w-px bg-primary/80 pointer-events-none"
         style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-elegant flex items-center justify-center">
-          <svg viewBox="0 0 24 24" className="w-5 h-5 text-secondary" fill="currentColor">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-primary text-primary-foreground shadow-elegant flex items-center justify-center">
+          <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
             <path d="M8 5l-5 7 5 7V5zM16 5v14l5-7-5-7z" />
           </svg>
         </div>
