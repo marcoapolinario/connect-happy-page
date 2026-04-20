@@ -17,7 +17,7 @@ import logo from "@/assets/turbomr-logo-upload.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
-  Menu, X,
+  Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
 
