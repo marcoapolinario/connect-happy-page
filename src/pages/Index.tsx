@@ -10,7 +10,7 @@ import mriAfter from "@/assets/mri-after.jpg";
 import featureNoiseBefore from "@/assets/results/cervical-s2-original.jpg";
 import featureNoiseAfter from "@/assets/results/cervical-s2-turbo.jpg";
 import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
-import featureResAfter from "@/assets/results/joelho-s1-turbo.jpg";
+import featureResAfter from "@/assets/results/joelho-s1-turbo-v2.jpg";
 import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
 import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
 import logo from "@/assets/turbomr-logo-upload.png";
