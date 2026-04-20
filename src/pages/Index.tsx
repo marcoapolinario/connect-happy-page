@@ -17,7 +17,7 @@ import logo from "@/assets/turbomr-logo-upload.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
-  Menu, X,
+  Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -309,6 +309,81 @@ const Index = () => {
               <div className="flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-accent" /><div><div className="font-bold">Sem artefatos</div><div className="text-xs text-white/60">zero alucinações</div></div></div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* COMPLIANCE & CERTIFICATIONS */}
+      <section id="conformidade" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="max-w-2xl mb-12 sm:mb-14">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Conformidade & Certificações</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Segurança e regulamentação que você pode confiar.</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Operamos em total conformidade com as principais normas de saúde, privacidade e proteção de dados do Brasil e do mundo.
+            </p>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            <Reveal>
+              <Card className="p-6 h-full border-border/50 shadow-card hover-lift">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">HIPAA Compliant</div>
+                <h3 className="font-bold text-base mb-2">Lei de Portabilidade e Responsabilidade do Seguro de Saúde</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Padrão internacional de proteção de informações de saúde dos pacientes.
+                </p>
+              </Card>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <Card className="p-6 h-full border-border/50 shadow-card hover-lift">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <FileCheck className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Certificação Anvisa</div>
+                <h3 className="font-bold text-base mb-2 tabular-nums">2535141860220244</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                  Software como dispositivo médico devidamente registrado na Anvisa.
+                </p>
+                <a
+                  href="https://consultas.anvisa.gov.br/#/saude/25351418602202446/?cnpj=23978673000116"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary/80 transition-colors"
+                >
+                  Consultar registro <ExternalLink className="w-3 h-3" />
+                </a>
+              </Card>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <Card className="p-6 h-full border-border/50 shadow-card hover-lift">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Lock className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">LGPD</div>
+                <h3 className="font-bold text-base mb-2">Sistema de Proteção de Dados</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Conformidade com a Lei Geral de Proteção de Dados — privacidade desde a concepção.
+                </p>
+              </Card>
+            </Reveal>
+
+            <Reveal delay={360}>
+              <Card className="p-6 h-full border-border/50 shadow-card hover-lift">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Certificação Digital</div>
+                <h3 className="font-bold text-base mb-2">Infraestrutura Segura</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Criptografia ponta a ponta, certificados digitais e processamento local na rede do hospital.
+                </p>
+              </Card>
+            </Reveal>
+          </div>
         </div>
       </section>
 
