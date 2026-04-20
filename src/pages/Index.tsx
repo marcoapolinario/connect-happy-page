@@ -116,12 +116,12 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-32 sm:h-40 flex items-center justify-between">
           <a href="#" className="flex items-center group" aria-label="TurboMR">
             <img
               src={logo}
               alt="TurboMR"
-              className="h-14 sm:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-28 sm:h-32 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 
@@ -176,7 +176,7 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-28 overflow-hidden gradient-hero">
+      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-28 overflow-hidden gradient-hero">
         <div className="absolute inset-0 grid-pattern opacity-40" />
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
@@ -690,7 +690,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src={logo} alt="TurboMR" className="h-16 sm:h-20 w-auto object-contain brightness-0 invert" />
+          <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert" />
           <div className="text-sm text-center md:text-right">
             <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
               <MessageCircle className="w-4 h-4" />
