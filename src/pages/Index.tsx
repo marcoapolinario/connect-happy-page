@@ -116,16 +116,16 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-32 sm:h-40 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-28 flex items-center justify-between">
           <a href="#" className="flex items-center group" aria-label="TurboMR">
             <img
               src={logo}
               alt="TurboMR"
-              className="h-28 sm:h-32 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-20 sm:h-24 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>
 
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <div className="hidden md:flex items-center gap-9 text-base font-medium text-muted-foreground">
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} className="relative hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
                 {l.label}
@@ -134,9 +134,9 @@ const Index = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild size="sm" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 hidden sm:inline-flex">
+            <Button asChild size="default" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 hidden sm:inline-flex text-base">
               <a href={waLink("Olá! Quero conhecer o TurboMR.")} target="_blank" rel="noopener">
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-5 h-5" />
                 WhatsApp
               </a>
             </Button>
@@ -176,7 +176,7 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-28 overflow-hidden gradient-hero">
+      <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-28 overflow-hidden gradient-hero">
         <div className="absolute inset-0 grid-pattern opacity-40" />
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
