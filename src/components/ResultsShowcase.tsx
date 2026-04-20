@@ -177,8 +177,8 @@ export const ResultsShowcase = () => {
                 </div>
                 <div className="p-3 sm:p-4 bg-card">
                   <BeforeAfter
-                    beforeSrc={s.original}
-                    afterSrc={s.turbo}
+                    beforeSrc={s.turbo}
+                    afterSrc={s.original}
                     beforeLabel="Rotina"
                     afterLabel="TurboMR"
                     alt={`${exam.name} ${s.label} - comparativo Rotina vs TurboMR`}
