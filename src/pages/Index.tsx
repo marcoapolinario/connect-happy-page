@@ -316,10 +316,10 @@ const Index = () => {
       <section id="conformidade" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-12 sm:mb-14">
-            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Conformidade & Certificações</p>
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Você pode confiar</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Segurança e regulamentação que você pode confiar.</h2>
             <p className="text-base sm:text-lg text-muted-foreground">
-              Operamos em total conformidade com as principais normas de saúde, privacidade e proteção de dados do Brasil e do mundo.
+              Nossa solução tem foco em deixar sua Ressonância Magnética mais rápida utilizando protocolos validados e seguros, em total conformidade com as principais normas de saúde e proteção de dados.
             </p>
           </Reveal>
 
