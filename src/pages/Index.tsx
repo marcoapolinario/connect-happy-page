@@ -176,7 +176,7 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-28 overflow-hidden gradient-hero">
+      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-28 overflow-hidden gradient-hero">
         <div className="absolute inset-0 grid-pattern opacity-40" />
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
