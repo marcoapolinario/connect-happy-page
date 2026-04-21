@@ -117,7 +117,7 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-36 sm:h-44 flex items-center justify-between">
+        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-36 sm:h-44 flex items-center justify-between">
           <a href="#" className="flex items-center group" aria-label="TurboMR">
             <img
               src={logo}
@@ -182,7 +182,7 @@ const Index = () => {
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-white opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -242,7 +242,7 @@ const Index = () => {
 
       {/* PILLARS */}
       <section id="solucao" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">A Solução</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Três dimensões. Um único pipeline.</h2>
@@ -279,7 +279,7 @@ const Index = () => {
       <section id="tecnologia" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" />
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-[80%] mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary-glow uppercase tracking-wider mb-3">Core Technology</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">O que a IA pode fazer para sua Ressonância?</h2>
@@ -315,7 +315,7 @@ const Index = () => {
 
       {/* COMPLIANCE & CERTIFICATIONS */}
       <section id="conformidade" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <Reveal className="max-w-2xl mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Você pode confiar</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Segurança e regulamentação que você pode confiar.</h2>
@@ -390,7 +390,7 @@ const Index = () => {
 
       {/* FLOW */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Visão Geral Técnica</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Mapa completo da solução.</h2>
@@ -435,7 +435,7 @@ const Index = () => {
       {/* BEFORE / AFTER COMPARISON */}
       <section id="comparativo" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary/10 blur-3xl animate-float" />
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-[80%] mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Comparativo Visual</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -503,7 +503,7 @@ const Index = () => {
 
       {/* RESULTS / CASES */}
       <section id="casos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/40">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-end mb-14 sm:mb-16">
             <Reveal>
               <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Performance Comprovada</p>
@@ -573,7 +573,7 @@ const Index = () => {
 
       {/* PROVEN RESULTS — IMAGE COMPARISONS */}
       <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Resultados Comprovados em Imagens</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -690,7 +690,7 @@ const Index = () => {
 
       {/* FOOTER */}
       <footer className="bg-secondary text-white/70">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-8 mb-12">
             <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert shrink-0" />
 
