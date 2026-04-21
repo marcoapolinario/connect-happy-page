@@ -18,6 +18,7 @@ import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
   Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
+  Mail, Phone, Linkedin, Instagram, Youtube,
 } from "lucide-react";
 import { useState } from "react";
 
