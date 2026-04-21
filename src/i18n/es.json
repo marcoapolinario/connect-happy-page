@@ -1,0 +1,304 @@
+{
+  "nav": {
+    "solucao": "Solución",
+    "tecnologia": "Tecnología",
+    "comparativo": "Antes/Después",
+    "casos": "Resultados",
+    "planos": "Planes",
+    "faq": "FAQ",
+    "menu": "Menú"
+  },
+  "common": {
+    "whatsapp": "WhatsApp"
+  },
+  "wa": {
+    "header": "¡Hola! Quiero conocer TurboMR.",
+    "demo": "¡Hola! Me gustaría solicitar una demostración de TurboMR.",
+    "trial": "¡Hola! Tengo interés en la prueba gratuita de 15 días de TurboMR.",
+    "default": "¡Hola! Quiero saber más sobre TurboMR.",
+    "annual": "Quiero consultar los precios de la Licencia Anual de TurboMR.",
+    "ppu": "Quiero entender el modelo Pay-per-Use de TurboMR.",
+    "proposal": "¡Hola! Quiero recibir una propuesta de TurboMR para mi clínica.",
+    "hi": "¡Hola!"
+  },
+  "stats": {
+    "faster": "Más Rápido",
+    "resolution": "Resolución",
+    "ultra": "Ultra",
+    "noEquipment": "Nuevos Equipos",
+    "zero": "Cero",
+    "capacity": "Capacidad"
+  },
+  "hero": {
+    "badge": "AI-Powered Radiology",
+    "titleStart": "Resonancia Magnética",
+    "titleHighlight": "50% más rápida",
+    "titleEnd": "con IA.",
+    "subtitle": "La solución definitiva de procesamiento de RM basada en inteligencia artificial: estudios más rápidos, nítidos y eficientes. Sin cambiar de equipo.",
+    "ctaDemo": "Solicitar demostración",
+    "ctaTrial": "Prueba 15 días gratis",
+    "imageAlt": "Comparativo de RM acelerada vs. procesada con TurboMR"
+  },
+  "pillars": {
+    "kicker": "La Solución",
+    "title": "Tres dimensiones. Un único pipeline.",
+    "subtitle": "Combinamos IA de punta con protocolos optimizados para entregar resultados superiores en velocidad, calidad y valor.",
+    "items": [
+      {
+        "tag": "Velocidad",
+        "title": "Eficiencia Operativa",
+        "points": [
+          "Reducción promedio del 40–50% en el tiempo de adquisición",
+          "Protocolos optimizados sin pérdida de datos",
+          "Procesamiento rápido en ~2 min por serie"
+        ]
+      },
+      {
+        "tag": "Calidad",
+        "title": "Precisión Diagnóstica",
+        "points": [
+          "Advanced Denoise, Super-resolución y nitidez",
+          "Imágenes limpias sin artefactos artificiales",
+          "Conserva metadatos DICOM y mejora el SNR"
+        ]
+      },
+      {
+        "tag": "Valor",
+        "title": "Impacto en el Negocio",
+        "points": [
+          "Más estudios/día = mayores ingresos por sala",
+          "Mejor experiencia para el paciente y el equipo",
+          "Procesamiento local seguro (compatible con LGPD)"
+        ]
+      }
+    ]
+  },
+  "tech": {
+    "kicker": "Tecnología Central",
+    "title": "¿Qué puede hacer la IA por su Resonancia?",
+    "subtitle": "Transforma la adquisición de estudios completos con reducción de tiempo: ¡imagine realizar una columna lumbar en menos de 5 minutos en equipos de 1.5T!",
+    "pipeline": [
+      {
+        "title": "Denoising",
+        "desc": "Redes neuronales profundas eliminan el ruido de la adquisición rápida, conservando la estructura de la señal.",
+        "tag": "↓ Ruido (SNR)"
+      },
+      {
+        "title": "Super-resolución",
+        "desc": "Recuperación inteligente de la resolución espacial. Reconstruye detalles finos y bordes.",
+        "tag": "Matriz Elevada"
+      },
+      {
+        "title": "Nitidez Final",
+        "desc": "Ajuste fino de contraste y realce de bordes anatómicos para una calidad superior a la original.",
+        "tag": "Diagnóstico Claro"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "~2 minutos",
+        "sub": "por serie"
+      },
+      {
+        "title": "100% DICOM",
+        "sub": "compatible"
+      },
+      {
+        "title": "Sin artefactos",
+        "sub": "cero alucinaciones"
+      }
+    ]
+  },
+  "compliance": {
+    "kicker": "Usted puede confiar",
+    "title": "Seguridad y regulación en la que puede confiar.",
+    "subtitle": "Nuestra solución se enfoca en hacer su Resonancia Magnética más rápida utilizando protocolos validados y seguros, en total conformidad con las principales normativas de salud y protección de datos.",
+    "cards": {
+      "hipaaTag": "HIPAA Compliant",
+      "hipaaTitle": "Ley de Portabilidad y Responsabilidad de Seguros de Salud",
+      "hipaaDesc": "Estándar internacional para la protección de la información de salud de los pacientes.",
+      "anvisaTag": "Certificación Anvisa",
+      "anvisaDesc": "Software como dispositivo médico debidamente registrado en Anvisa.",
+      "anvisaCta": "Consultar registro",
+      "lgpdTag": "LGPD",
+      "lgpdTitle": "Sistema de Protección de Datos",
+      "lgpdDesc": "Conformidad con la Ley General de Protección de Datos: privacidad desde el diseño.",
+      "digitalTag": "Certificación Digital",
+      "digitalTitle": "Infraestructura Segura",
+      "digitalDesc": "Cifrado de extremo a extremo, certificados digitales y procesamiento local en la red del hospital."
+    }
+  },
+  "flow": {
+    "kicker": "Visión General Técnica",
+    "title": "Mapa completo de la solución.",
+    "subtitle": "Flujo continuo, seguro y automatizado: desde la adquisición hasta el diagnóstico en minutos.",
+    "stage": "ETAPA",
+    "steps": [
+      {
+        "title": "Adquisición",
+        "desc": "RM GE / Siemens / Philips con protocolo optimizado"
+      },
+      {
+        "title": "Envío",
+        "desc": "Red local vía DICOM C-STORE"
+      },
+      {
+        "title": "TurboMR IA",
+        "desc": "Servidor on-premise: denoise + super-res + nitidez"
+      },
+      {
+        "title": "Retorno",
+        "desc": "Integración automática con PACS / Workstation"
+      },
+      {
+        "title": "Informe",
+        "desc": "El radiólogo informa con calidad superior"
+      }
+    ],
+    "boxes": [
+      {
+        "t": "Privacidad Total",
+        "d": "Datos procesados localmente. Ninguna imagen sale de la red del hospital (LGPD)."
+      },
+      {
+        "t": "Metadatos Conservados",
+        "d": "Mantiene todas las etiquetas DICOM originales para una compatibilidad total con el PACS."
+      },
+      {
+        "t": "Alta Disponibilidad",
+        "d": "Sistema 24/7 con cola resiliente y monitoreo continuo."
+      }
+    ]
+  },
+  "compare": {
+    "kicker": "Comparativo Visual",
+    "titleStart": "Antes vs.",
+    "titleHighlight": "Después",
+    "subtitle": "Tres beneficios que se aprecian en cada estudio procesado por TurboMR. Arrastre el control de cada imagen para comparar.",
+    "items": [
+      {
+        "title": "Ruido reducido",
+        "desc": "Advanced Denoise elimina el ruido de la adquisición acelerada sin borrar detalles anatómicos.",
+        "alt": "Comparativo de ruido en RM cervical"
+      },
+      {
+        "title": "Resolución recuperada",
+        "desc": "La super-resolución reconstruye la matriz y los bordes finos, revelando estructuras sutiles.",
+        "alt": "Comparativo de resolución en RM de rodilla"
+      },
+      {
+        "title": "Diagnóstico más claro",
+        "desc": "Imagen final con nitidez y contraste superiores, lista para el informe en el PACS.",
+        "alt": "Comparativo de nitidez en RM lumbar"
+      }
+    ],
+    "beforeLabel": "Rutina",
+    "afterLabel": "TurboMR",
+    "footnote": "* Imágenes reales de POC. Arrastre el divisor para comparar."
+  },
+  "results": {
+    "kicker": "Rendimiento Comprobado",
+    "title": "Resultados reales de POC.",
+    "subtitle": "Datos de validación clínica en instituciones de referencia. Reducción masiva de tiempo, aumento de capacidad y calidad superior.",
+    "metric1Value": "48%",
+    "metric1Label": "Reducción promedio total",
+    "metric2Value": "500+",
+    "metric2Label": "Protocolos creados",
+    "table": {
+      "region": "Región",
+      "standard": "Estándar",
+      "turbo": "TurboMR",
+      "reduction": "Reducción"
+    },
+    "regions": {
+      "Crânio (Neuro)": "Cráneo (Neuro)",
+      "Cervical": "Cervical",
+      "Lombar": "Lumbar",
+      "Joelho": "Rodilla",
+      "Tornozelo": "Tobillo",
+      "Quadril": "Cadera",
+      "Ombro": "Hombro",
+      "Punho": "Muñeca"
+    },
+    "footnote1": "Con estudios",
+    "footnoteHighlight": "50% más rápidos",
+    "footnote2": ", su agenda gana flexibilidad para citas de último momento, urgencias y menos horas extras."
+  },
+  "showcase": {
+    "kicker": "Resultados Comprobados en Imágenes",
+    "titleStart": "Vea la diferencia,",
+    "titleHighlight": "serie por serie",
+    "subtitle": "Casos clínicos reales que comparan el protocolo estándar (Rutina) con el procesamiento de TurboMR: misma anatomía, mismo paciente, en una fracción del tiempo.",
+    "footnote": "Imágenes reales de casos de validación clínica — Mar/2026."
+  },
+  "pricing": {
+    "kicker": "Modelos Comerciales",
+    "title": "Comience sin compromiso.",
+    "subtitle": "Elija la opción que mejor se adapte al volumen y flujo de caja de su institución.",
+    "recommended": "RECOMENDADO",
+    "annualTitle": "Licencia Anual",
+    "annualSub": "Ilimitada por equipo",
+    "annualFeatures": [
+      "Procesamiento ilimitado 24/7",
+      "Soporte técnico dedicado",
+      "Actualizaciones incluidas",
+      "Capacitación del equipo"
+    ],
+    "annualCta": "Consultar precios",
+    "ppuTitle": "Pay-per-Use",
+    "ppuSub": "Por estudio procesado",
+    "ppuFeatures": [
+      "Sin inversión inicial",
+      "Escalable según la demanda",
+      "Facturación mensual",
+      "Misma calidad técnica"
+    ],
+    "ppuCta": "Saber más",
+    "trialTitle": "🎁 Período de prueba gratuito — 15 días",
+    "trialSub": "Lo validamos en su estructura, sin compromiso."
+  },
+  "faq": {
+    "kicker": "Aclarando dudas",
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Cómo funciona la integración con mi PACS?",
+        "a": "TurboMR recibe imágenes vía DICOM C-STORE y devuelve las series procesadas automáticamente al PACS. Sin cambios en el flujo de trabajo del radiólogo."
+      },
+      {
+        "q": "¿Necesito cambiar mi equipo de Resonancia?",
+        "a": "No. TurboMR es compatible con equipos GE, Siemens y Philips. Trabajamos sobre la adquisición existente, sin ningún hardware adicional en la sala de examen."
+      },
+      {
+        "q": "¿La IA crea artefactos o inventa estructuras?",
+        "a": "No. Nuestro pipeline conserva la señal original y solo elimina ruido y recupera resolución. Sin 'alucinaciones', 100% compatible con DICOM."
+      },
+      {
+        "q": "¿Los datos salen del hospital?",
+        "a": "No. Todo el procesamiento es local (on-premise). Ninguna imagen se transfiere por internet. Totalmente compatible con la LGPD."
+      },
+      {
+        "q": "¿La calidad diagnóstica se ve comprometida?",
+        "a": "Al contrario. La IA aumenta el SNR y la nitidez, permitiendo visualizar detalles anatómicos sutiles con más claridad, incluso en adquisiciones aceleradas."
+      },
+      {
+        "q": "¿El radiólogo necesita capacitación?",
+        "a": "No. Las imágenes llegan al PACS como series estándar, listas para el informe. El flujo de lectura permanece idéntico."
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para acelerar su RM?",
+    "subtitle": "Reciba una propuesta personalizada e inicie el piloto de 15 días en su clínica. Implementación sencilla, sin interrupción de la operación.",
+    "btn": "Hablar por WhatsApp",
+    "note": "Respuesta en horario comercial • Sin compromiso"
+  },
+  "footer": {
+    "menu": "Menú",
+    "contact": "Contacto",
+    "follow": "Síganos",
+    "compliance": "Seguridad y regulación",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad"
+  }
+}

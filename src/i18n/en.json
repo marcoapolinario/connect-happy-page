@@ -1,0 +1,304 @@
+{
+  "nav": {
+    "solucao": "Solution",
+    "tecnologia": "Technology",
+    "comparativo": "Before/After",
+    "casos": "Results",
+    "planos": "Plans",
+    "faq": "FAQ",
+    "menu": "Menu"
+  },
+  "common": {
+    "whatsapp": "WhatsApp"
+  },
+  "wa": {
+    "header": "Hello! I'd like to learn about TurboMR.",
+    "demo": "Hello! I would like to request a demo of TurboMR.",
+    "trial": "Hello! I'm interested in the 15-day free trial of TurboMR.",
+    "default": "Hello! I want to know more about TurboMR.",
+    "annual": "I'd like to inquire about the pricing for the TurboMR Annual License.",
+    "ppu": "I'd like to understand the TurboMR Pay-per-Use model.",
+    "proposal": "Hello! I'd like to receive a TurboMR proposal for my clinic.",
+    "hi": "Hello!"
+  },
+  "stats": {
+    "faster": "Faster",
+    "resolution": "Resolution",
+    "ultra": "Ultra",
+    "noEquipment": "New Equipment",
+    "zero": "Zero",
+    "capacity": "Capacity"
+  },
+  "hero": {
+    "badge": "AI-Powered Radiology",
+    "titleStart": "MRI",
+    "titleHighlight": "50% faster",
+    "titleEnd": "with AI.",
+    "subtitle": "The definitive AI-powered MRI processing solution — faster, sharper, and more efficient scans. Without changing your equipment.",
+    "ctaDemo": "Request a demo",
+    "ctaTrial": "15-day free trial",
+    "imageAlt": "Comparison of an accelerated MRI vs. one processed with TurboMR"
+  },
+  "pillars": {
+    "kicker": "The Solution",
+    "title": "Three dimensions. One single pipeline.",
+    "subtitle": "We combine cutting-edge AI with optimized protocols to deliver superior results in speed, quality, and value.",
+    "items": [
+      {
+        "tag": "Speed",
+        "title": "Operational Efficiency",
+        "points": [
+          "Average reduction of 40–50% in acquisition time",
+          "Optimized protocols with no data loss",
+          "Fast processing in ~2 min per series"
+        ]
+      },
+      {
+        "tag": "Quality",
+        "title": "Diagnostic Precision",
+        "points": [
+          "Advanced Denoise, Super-resolution, and sharpness",
+          "Clean images without artificial artifacts",
+          "Preserves DICOM metadata and improves SNR"
+        ]
+      },
+      {
+        "tag": "Value",
+        "title": "Business Impact",
+        "points": [
+          "More scans/day = higher revenue per room",
+          "Improved patient and staff experience",
+          "Secure local processing (LGPD compliant)"
+        ]
+      }
+    ]
+  },
+  "tech": {
+    "kicker": "Core Technology",
+    "title": "What can AI do for your MRI?",
+    "subtitle": "Transforms the acquisition of entire scans with reduced time — imagine performing a lumbar spine scan in under 5 minutes on 1.5T machines!",
+    "pipeline": [
+      {
+        "title": "Denoising",
+        "desc": "Deep neural networks remove noise from rapid acquisition, preserving the signal's structure.",
+        "tag": "↓ Noise (SNR)"
+      },
+      {
+        "title": "Super-Resolution",
+        "desc": "Intelligent recovery of spatial resolution. Reconstructs fine details and edges.",
+        "tag": "Higher Matrix"
+      },
+      {
+        "title": "Final Sharpening",
+        "desc": "Fine-tuning of contrast and enhancement of anatomical edges for quality superior to the original.",
+        "tag": "Clear Diagnosis"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "~2 minutes",
+        "sub": "per series"
+      },
+      {
+        "title": "100% DICOM",
+        "sub": "compatible"
+      },
+      {
+        "title": "No artifacts",
+        "sub": "zero hallucinations"
+      }
+    ]
+  },
+  "compliance": {
+    "kicker": "You can trust",
+    "title": "Security and regulations you can trust.",
+    "subtitle": "Our solution focuses on making your MRI scans faster using validated and secure protocols, in full compliance with the main health and data protection standards.",
+    "cards": {
+      "hipaaTag": "HIPAA Compliant",
+      "hipaaTitle": "Health Insurance Portability and Accountability Act",
+      "hipaaDesc": "International standard for protecting patients' health information.",
+      "anvisaTag": "Anvisa Certified",
+      "anvisaDesc": "Software as a medical device duly registered with Anvisa.",
+      "anvisaCta": "Check registration",
+      "lgpdTag": "LGPD",
+      "lgpdTitle": "Data Protection System",
+      "lgpdDesc": "Compliance with the General Data Protection Law — privacy by design.",
+      "digitalTag": "Digital Certification",
+      "digitalTitle": "Secure Infrastructure",
+      "digitalDesc": "End-to-end encryption, digital certificates, and local processing on the hospital's network."
+    }
+  },
+  "flow": {
+    "kicker": "Technical Overview",
+    "title": "Complete solution map.",
+    "subtitle": "A continuous, secure, and automated workflow: from acquisition to diagnosis in minutes.",
+    "stage": "STEP",
+    "steps": [
+      {
+        "title": "Acquisition",
+        "desc": "GE / Siemens / Philips MRI with optimized protocol"
+      },
+      {
+        "title": "Sending",
+        "desc": "Local network via DICOM C-STORE"
+      },
+      {
+        "title": "TurboMR AI",
+        "desc": "On-premise server: denoise + super-res + sharpening"
+      },
+      {
+        "title": "Return",
+        "desc": "Automatic integration with PACS / Workstation"
+      },
+      {
+        "title": "Reporting",
+        "desc": "Radiologist reports with superior quality"
+      }
+    ],
+    "boxes": [
+      {
+        "t": "Total Privacy",
+        "d": "Data is processed locally. No images leave the hospital's network (LGPD)."
+      },
+      {
+        "t": "Metadata Preserved",
+        "d": "Keeps all original DICOM tags for full compatibility with PACS."
+      },
+      {
+        "t": "High Availability",
+        "d": "24/7 system with a resilient queue and continuous monitoring."
+      }
+    ]
+  },
+  "compare": {
+    "kicker": "Visual Comparison",
+    "titleStart": "Before vs.",
+    "titleHighlight": "After",
+    "subtitle": "Three benefits that appear in every scan processed by TurboMR. Drag the slider on each image to compare.",
+    "items": [
+      {
+        "title": "Reduced noise",
+        "desc": "Advanced Denoise eliminates noise from accelerated acquisition without erasing anatomical details.",
+        "alt": "Noise comparison in a cervical MRI"
+      },
+      {
+        "title": "Recovered resolution",
+        "desc": "Super-resolution reconstructs the matrix and fine edges, revealing subtle structures.",
+        "alt": "Resolution comparison in a knee MRI"
+      },
+      {
+        "title": "Clearer diagnosis",
+        "desc": "Final image with superior sharpness and contrast, ready for reporting in PACS.",
+        "alt": "Sharpness comparison in a lumbar MRI"
+      }
+    ],
+    "beforeLabel": "Routine",
+    "afterLabel": "TurboMR",
+    "footnote": "* Real POC images. Drag the slider to compare."
+  },
+  "results": {
+    "kicker": "Proven Performance",
+    "title": "Real POC results.",
+    "subtitle": "Clinical validation data from leading institutions. Massive time reduction, increased capacity, and superior quality.",
+    "metric1Value": "48%",
+    "metric1Label": "Average total reduction",
+    "metric2Value": "500+",
+    "metric2Label": "Protocols created",
+    "table": {
+      "region": "Region",
+      "standard": "Standard",
+      "turbo": "TurboMR",
+      "reduction": "Reduction"
+    },
+    "regions": {
+      "Crânio (Neuro)": "Skull (Neuro)",
+      "Cervical": "Cervical Spine",
+      "Lombar": "Lumbar Spine",
+      "Joelho": "Knee",
+      "Tornozelo": "Ankle",
+      "Quadril": "Hip",
+      "Ombro": "Shoulder",
+      "Punho": "Wrist"
+    },
+    "footnote1": "With scans",
+    "footnoteHighlight": "50% faster",
+    "footnote2": ", your schedule gains flexibility for walk-ins, emergencies, and fewer overtime hours."
+  },
+  "showcase": {
+    "kicker": "Proven Results in Images",
+    "titleStart": "See the difference,",
+    "titleHighlight": "series by series",
+    "subtitle": "Real clinical cases comparing the standard protocol (Routine) with TurboMR processing — same anatomy, same patient, in a fraction of the time.",
+    "footnote": "Real images from clinical validation cases — Mar/2026."
+  },
+  "pricing": {
+    "kicker": "Business Models",
+    "title": "Start without commitment.",
+    "subtitle": "Choose the option that best fits your institution's volume and cash flow.",
+    "recommended": "RECOMMENDED",
+    "annualTitle": "Annual License",
+    "annualSub": "Unlimited per machine",
+    "annualFeatures": [
+      "Unlimited 24/7 processing",
+      "Dedicated technical support",
+      "Updates included",
+      "Staff training"
+    ],
+    "annualCta": "Inquire about pricing",
+    "ppuTitle": "Pay-per-Use",
+    "ppuSub": "Per processed scan",
+    "ppuFeatures": [
+      "No initial investment",
+      "Scalable according to demand",
+      "Monthly billing",
+      "Same technical quality"
+    ],
+    "ppuCta": "Learn more",
+    "trialTitle": "🎁 Free trial period — 15 days",
+    "trialSub": "We validate it in your facility, no commitment."
+  },
+  "faq": {
+    "kicker": "Clearing up questions",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "How does integration with my PACS work?",
+        "a": "TurboMR receives images via DICOM C-STORE and automatically returns the processed series to the PACS. No changes to the radiologist's workflow."
+      },
+      {
+        "q": "Do I need to replace my MRI equipment?",
+        "a": "No. TurboMR is compatible with GE, Siemens, and Philips equipment. We work on the existing acquisition, with no additional hardware in the exam room."
+      },
+      {
+        "q": "Does the AI create artifacts or invent structures?",
+        "a": "No. Our pipeline preserves the original signal and only removes noise and recovers resolution. No 'hallucinations' — 100% DICOM compatible."
+      },
+      {
+        "q": "Does the data leave the hospital?",
+        "a": "No. All processing is local (on-premise). No images are sent over the internet. Fully compliant with LGPD."
+      },
+      {
+        "q": "Is diagnostic quality compromised?",
+        "a": "On the contrary. The AI increases SNR and sharpness, allowing for clearer visualization of subtle anatomical details, even in accelerated acquisitions."
+      },
+      {
+        "q": "Does the radiologist need training?",
+        "a": "No. The images arrive at the PACS as standard series, ready for reporting. The reading workflow remains identical."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to accelerate your MRI?",
+    "subtitle": "Receive a customized proposal and start the 15-day pilot at your clinic. Simple implementation, with no operational disruption.",
+    "btn": "Chat on WhatsApp",
+    "note": "Replies during business hours • No commitment"
+  },
+  "footer": {
+    "menu": "Menu",
+    "contact": "Contact",
+    "follow": "Follow us",
+    "compliance": "Security and compliance",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy"
+  }
+}
