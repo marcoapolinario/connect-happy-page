@@ -18,6 +18,7 @@ import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
   Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
+  Mail, Phone, Linkedin, Instagram, Youtube,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -688,15 +689,109 @@ const Index = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary text-white/70">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert" />
-          <div className="text-sm text-center md:text-right">
-            <a href={waLink("Olá!")} target="_blank" rel="noopener" className="hover:text-white transition-colors inline-flex items-center gap-2">
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp {WHATSAPP_DISPLAY}
-            </a>
-            <p className="mt-1 text-xs">© {new Date().getFullYear()} TurboMR. Todos os direitos reservados.</p>
+      <footer className="bg-secondary text-white/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-8 mb-12">
+            <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert shrink-0" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 flex-1 md:max-w-3xl">
+              {/* Coluna 1 — Navegação */}
+              <div>
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Menu</h3>
+                <ul className="space-y-2.5">
+                  {navLinks.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} className="text-sm hover:text-white transition-colors">
+                        {l.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Coluna 2 — Contato */}
+              <div>
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Contato</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="mailto:contato@turbomr.com" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+                      <Mail className="w-4 h-4 text-primary-glow shrink-0" />
+                      contato@turbomr.com
+                    </a>
+                  </li>
+                  <li>
+                    <a href={waLink("Olá! Quero saber mais sobre o TurboMR.")} target="_blank" rel="noopener" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+                      <MessageCircle className="w-4 h-4 text-primary-glow shrink-0" />
+                      WhatsApp {WHATSAPP_DISPLAY}
+                    </a>
+                  </li>
+                  <li>
+                    <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-2.5 text-sm hover:text-white transition-colors">
+                      <Phone className="w-4 h-4 text-primary-glow shrink-0" />
+                      {WHATSAPP_DISPLAY}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Coluna 3 — Redes Sociais */}
+              <div>
+                <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Siga-nos</h3>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.linkedin.com/company/turbomr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/turbomri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-colors"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@turbomri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-colors"
+                  >
+                    <Youtube className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Segurança e regulamentação — miniatura */}
+          <div className="border-t border-white/10 pt-6 mb-6">
+            <p className="text-[11px] font-semibold text-white/50 uppercase tracking-wider mb-3">Segurança e regulamentação</p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/60">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-primary-glow" /> HIPAA
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <FileCheck className="w-3.5 h-3.5 text-primary-glow" /> Anvisa 2535141860220244
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Lock className="w-3.5 h-3.5 text-primary-glow" /> LGPD
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Shield className="w-3.5 h-3.5 text-primary-glow" /> Certificação Digital
+              </span>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+            <p>© {new Date().getFullYear()} TurboMR. Todos os direitos reservados.</p>
+            <a href="#conformidade" className="hover:text-white transition-colors">Política de Privacidade</a>
           </div>
         </div>
       </footer>
