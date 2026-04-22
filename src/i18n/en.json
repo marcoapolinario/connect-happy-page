@@ -293,6 +293,57 @@
     "btn": "Chat on WhatsApp",
     "note": "Replies during business hours • No commitment"
   },
+  "lp": {
+    "metaTitle": "Boost your MRI productivity by 40%+ | TurboMR",
+    "metaDescription": "More scans per day, more revenue, less time for the patient inside the scanner. See the financial and operational results TurboMR delivers to clinics and hospitals.",
+    "back": "Back",
+    "kicker": "For clinic owners and managers",
+    "h1": "More scans, more revenue, more comfortable patients",
+    "subheadline": "TurboMR speeds up your MRI by up to 50% with AI — no equipment swap. The result: 40%+ extra capacity in the same shift and a better patient experience.",
+    "bullets": [
+      "+40% more scans per day on the same equipment",
+      "Patients spend up to half the time inside the machine",
+      "No hardware investment, no scanner replacement",
+      "Typical ROI within a few months",
+      "Compatible with GE, Siemens and Philips"
+    ],
+    "formTitle": "Talk to a specialist",
+    "formSub": "Tell us about your operation. We'll get back to you within 1 business day.",
+    "fields": {
+      "name": "Full name",
+      "email": "Work email",
+      "role": "Role",
+      "company": "Clinic or hospital name",
+      "message": "Message (optional)"
+    },
+    "submit": "Talk to a specialist",
+    "submitting": "Sending...",
+    "privacy": "Your data is handled per privacy regulations and used only for commercial follow-up.",
+    "toastSuccessTitle": "Got it!",
+    "toastSuccessDesc": "Your request has reached us. A specialist will be in touch shortly.",
+    "toastErrorTitle": "Could not send",
+    "toastErrorDesc": "Please try again in a moment, or write to contato@turbomr.com.",
+    "thanksTitle": "Thank you for your interest!",
+    "thanksDesc": "We received your information. A TurboMR specialist will reach out shortly.",
+    "errors": {
+      "required": "Required field",
+      "email": "Invalid email"
+    },
+    "benefitsKicker": "Why TurboMR",
+    "benefitsTitle": "Results that show up in revenue and in waiting times",
+    "benefitsSub": "Proven technology, focused on revenue and on what matters most: the patient.",
+    "benefits": [
+      { "title": "+40% capacity", "desc": "More scans in the same shift, with the same team and the same scanner. Grow without CAPEX." },
+      { "title": "Immediate extra revenue", "desc": "Every additional scan is direct margin. Typical ROI in a few months, with a clear, measurable payback." },
+      { "title": "Patient comfort", "desc": "Time inside the scanner cut in half. Less claustrophobia, fewer motion artifacts, better experience." },
+      { "title": "Shorter waiting list", "desc": "Reduce the waiting time for an MRI and improve referring physicians' satisfaction." },
+      { "title": "Diagnostic quality preserved", "desc": "AI dedicated to reconstruction: keeps signal fidelity and report confidence." },
+      { "title": "Painless deployment", "desc": "Compatible with GE, Siemens and Philips. Integrates with your PACS via DICOM, no change to the radiologist's workflow." }
+    ],
+    "finalTitle": "Ready to boost your MRI productivity?",
+    "finalSub": "Talk to our team and find out in minutes how much your operation can grow.",
+    "finalCta": "Talk to a specialist"
+  },
   "footer": {
     "menu": "Menu",
     "contact": "Contact",
