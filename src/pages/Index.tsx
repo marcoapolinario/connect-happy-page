@@ -51,10 +51,7 @@ const cases = [
 const navLinks = [
   { href: "#solucao", key: "nav.solucao" },
   { href: "#tecnologia", key: "nav.tecnologia" },
-  { href: "#comparativo", key: "nav.comparativo" },
   { href: "#casos", key: "nav.casos" },
-  { href: "#planos", key: "nav.planos" },
-  { href: "#faq", key: "nav.faq" },
 ];
 
 const Index = () => {
