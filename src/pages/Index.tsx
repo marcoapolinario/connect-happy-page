@@ -562,7 +562,7 @@ const Index = () => {
                   ))}
                 </ul>
                 <Button asChild variant="outline" className="w-full">
-                  <a href={waLink(t("wa.ppu"))} target="_blank" rel="noopener">{t("pricing.ppuCta")}</a>
+                  <a href="/lp">{t("pricing.ppuCta")}</a>
                 </Button>
               </Card>
             </Reveal>
