@@ -293,6 +293,57 @@
     "btn": "Hablar por WhatsApp",
     "note": "Respuesta en horario comercial • Sin compromiso"
   },
+  "lp": {
+    "metaTitle": "Aumente +40% la productividad de su RM | TurboMR",
+    "metaDescription": "Más estudios por día, más ingresos, menos tiempo del paciente dentro del scanner. Conozca los resultados financieros y operativos que TurboMR entrega a clínicas y hospitales.",
+    "back": "Volver",
+    "kicker": "Para dueños de clínica y gestores",
+    "h1": "Más estudios, más ingresos, pacientes más cómodos",
+    "subheadline": "TurboMR acelera su Resonancia Magnética hasta un 50% con IA, sin cambiar equipos. Resultado: más del 40% de aumento de capacidad en el mismo turno y mejor experiencia para el paciente.",
+    "bullets": [
+      "+40% de estudios por día en el mismo equipo",
+      "Los pacientes pasan hasta la mitad del tiempo dentro de la máquina",
+      "Sin inversión en hardware ni cambio de scanner",
+      "ROI típico en pocos meses",
+      "Compatible con GE, Siemens y Philips"
+    ],
+    "formTitle": "Hable con un especialista",
+    "formSub": "Cuéntenos sobre su operación. Le responderemos en hasta 1 día hábil.",
+    "fields": {
+      "name": "Nombre completo",
+      "email": "Correo corporativo",
+      "role": "Cargo",
+      "company": "Nombre de la clínica u hospital",
+      "message": "Mensaje (opcional)"
+    },
+    "submit": "Quiero hablar con un especialista",
+    "submitting": "Enviando...",
+    "privacy": "Sus datos se tratan conforme a la normativa de privacidad y solo se usan para contacto comercial.",
+    "toastSuccessTitle": "¡Recibido!",
+    "toastSuccessDesc": "Su contacto llegó. Pronto un especialista hablará con usted.",
+    "toastErrorTitle": "No fue posible enviar",
+    "toastErrorDesc": "Inténtelo nuevamente en instantes o escriba a contato@turbomr.com.",
+    "thanksTitle": "¡Gracias por su interés!",
+    "thanksDesc": "Recibimos su información. Un especialista de TurboMR se pondrá en contacto pronto.",
+    "errors": {
+      "required": "Campo obligatorio",
+      "email": "Correo inválido"
+    },
+    "benefitsKicker": "Por qué TurboMR",
+    "benefitsTitle": "Resultados que se ven en la caja y en la lista de espera",
+    "benefitsSub": "Tecnología comprobada, foco en ingresos y en quien más importa: el paciente.",
+    "benefits": [
+      { "title": "+40% de capacidad", "desc": "Más estudios en el mismo turno, con el mismo equipo y el mismo scanner. Crezca sin CAPEX." },
+      { "title": "Ingresos adicionales inmediatos", "desc": "Cada estudio extra es margen directo. ROI típico en pocos meses, con repago claro y medible." },
+      { "title": "Confort del paciente", "desc": "Tiempo dentro del scanner reducido a la mitad. Menos claustrofobia, menos artefactos por movimiento, mejor experiencia." },
+      { "title": "Lista de espera más corta", "desc": "Reduzca el tiempo de espera por una RM y mejore la satisfacción de los médicos solicitantes." },
+      { "title": "Calidad diagnóstica preservada", "desc": "IA dedicada a la reconstrucción: mantiene la fidelidad de la señal y la confianza del informe." },
+      { "title": "Implementación sin dolor", "desc": "Compatible con GE, Siemens y Philips. Se integra a su PACS vía DICOM, sin cambiar el flujo del radiólogo." }
+    ],
+    "finalTitle": "¿Listo para aumentar la productividad de su RM?",
+    "finalSub": "Hable con nuestro equipo y descubra en minutos cuánto puede crecer su operación.",
+    "finalCta": "Quiero hablar con un especialista"
+  },
   "footer": {
     "menu": "Menú",
     "contact": "Contacto",
