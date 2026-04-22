@@ -70,8 +70,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-36 sm:h-44 flex items-center justify-between">
+      <header className="relative z-50 backdrop-blur-lg bg-background/85 border-b border-border">
+        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-32 flex items-center justify-between">
           <a href="#" className="flex items-center group" aria-label="TurboMR">
             <img
               src={logo}
@@ -132,7 +132,7 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section className="relative pt-44 pb-16 lg:pt-52 lg:pb-28 overflow-hidden gradient-hero">
+      <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-28 overflow-hidden gradient-hero">
         <div className="absolute inset-0 grid-pattern opacity-40" />
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
