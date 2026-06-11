@@ -243,9 +243,10 @@
     ]
   },
   "cta": {
-    "title": "Pronto para acelerar sua RM?",
+    "title": "Pronto para aumentar a produtividade da sua Ressonância Magnética?",
     "subtitle": "Receba uma proposta personalizada e inicie o piloto de 15 dias na sua clínica. Implementação simples, sem interrupção da operação.",
-    "btn": "Falar no WhatsApp",
+    "btn": "Solicitar demonstração",
+    "btnApp": "Acessar plataforma",
     "note": "Resposta em horário comercial • Sem compromisso"
   },
   "lp": {
