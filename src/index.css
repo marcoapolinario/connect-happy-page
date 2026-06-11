@@ -4,40 +4,40 @@
 
 @layer base {
   :root {
-    --background: 200 30% 98%;
-    --foreground: 195 50% 12%;
+    --background: 210 40% 99%;
+    --foreground: 210 60% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 195 50% 12%;
+    --card-foreground: 210 60% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 195 50% 12%;
+    --popover-foreground: 210 60% 10%;
 
-    /* Brand teal — extraído do logo */
-    --primary: 188 78% 27%;
+    /* Brand — TurboMR (deep navy → turquoise) */
+    --primary: 199 89% 38%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 184 80% 42%;
+    --primary-glow: 190 95% 55%;
 
-    --secondary: 195 60% 14%;
+    --secondary: 210 65% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 195 25% 94%;
-    --muted-foreground: 195 18% 38%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 210 18% 40%;
 
-    --accent: 175 75% 42%;
-    --accent-foreground: 195 50% 12%;
+    --accent: 186 90% 48%;
+    --accent-foreground: 210 65% 12%;
 
-    --success: 152 70% 38%;
+    --success: 160 75% 40%;
     --success-foreground: 0 0% 100%;
 
     --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 195 25% 88%;
-    --input: 195 25% 88%;
-    --ring: 188 78% 27%;
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 199 89% 38%;
 
-    --radius: 0.875rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
