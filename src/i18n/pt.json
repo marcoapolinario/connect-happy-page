@@ -1,6 +1,11 @@
 {
   "nav": {
     "solucao": "Solução",
+    "comoFunciona": "Como Funciona",
+    "beneficios": "Benefícios",
+    "resultados": "Resultados",
+    "contato": "Contato",
+    "acesso": "Acesso",
     "tecnologia": "Tecnologia",
     "comparativo": "Antes/Depois",
     "casos": "Resultados",
@@ -37,7 +42,42 @@
     "subtitle": "A solução definitiva de processamento de RM baseada em inteligência artificial — exames mais rápidos, nítidos e eficientes. Sem trocar de equipamento.",
     "ctaDemo": "Solicitar demonstração",
     "ctaTrial": "Teste 15 dias grátis",
-    "imageAlt": "Comparativo RM acelerada vs processada com TurboMR"
+    "imageAlt": "Comparativo RM acelerada vs processada com TurboMR",
+    "imageCaption": "Arraste o divisor para comparar"
+  },
+  "benefits": {
+    "kicker": "Benefícios",
+    "title": "Ganhos reais para todo o ecossistema da ressonância.",
+    "subtitle": "Um único pipeline de IA que entrega valor mensurável para clínicas, médicos e pacientes.",
+    "cards": [
+      {
+        "tag": "Para Clínicas",
+        "title": "Mais produtividade por sala",
+        "points": [
+          "Mais exames realizados por dia, no mesmo equipamento",
+          "Melhor aproveitamento do scanner sem CAPEX adicional",
+          "Redução de filas de espera e mais encaixes possíveis"
+        ]
+      },
+      {
+        "tag": "Para Médicos",
+        "title": "Melhor qualidade diagnóstica",
+        "points": [
+          "Imagens com maior SNR e nitidez para laudos mais seguros",
+          "Mais confiança na interpretação de detalhes sutis",
+          "Menos artefatos, repetições e perda de qualidade"
+        ]
+      },
+      {
+        "tag": "Para Pacientes",
+        "title": "Experiência mais humana",
+        "points": [
+          "Até metade do tempo dentro da máquina",
+          "Mais conforto e menos claustrofobia",
+          "Menor necessidade de repetir séries por movimento"
+        ]
+      }
+    ]
   },
   "pillars": {
     "kicker": "A Solução",
@@ -203,9 +243,10 @@
     ]
   },
   "cta": {
-    "title": "Pronto para acelerar sua RM?",
+    "title": "Pronto para aumentar a produtividade da sua Ressonância Magnética?",
     "subtitle": "Receba uma proposta personalizada e inicie o piloto de 15 dias na sua clínica. Implementação simples, sem interrupção da operação.",
-    "btn": "Falar no WhatsApp",
+    "btn": "Solicitar demonstração",
+    "btnApp": "Acessar plataforma",
     "note": "Resposta em horário comercial • Sem compromisso"
   },
   "lp": {
@@ -265,6 +306,8 @@
     "follow": "Siga-nos",
     "compliance": "Segurança e regulamentação",
     "rights": "Todos os direitos reservados.",
-    "privacy": "Política de Privacidade"
+    "privacy": "Política de Privacidade",
+    "tagline": "Inteligência Artificial para Ressonância Magnética. Exames mais rápidos, imagens mais nítidas, operação escalável.",
+    "commercial": "Portal Comercial"
   }
 }

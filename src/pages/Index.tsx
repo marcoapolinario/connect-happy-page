@@ -5,8 +5,8 @@ import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { ResultsShowcase } from "@/components/ResultsShowcase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Logo } from "@/components/Logo";
 import { useI18n } from "@/i18n";
-import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
 import featureNoiseBefore from "@/assets/results/cervical-s2-original.jpg";
@@ -15,17 +15,18 @@ import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
 import featureResAfter from "@/assets/results/joelho-s1-turbo-v2.jpg";
 import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
 import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
-import logo from "@/assets/turbomr-logo-upload.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
   Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
-  Mail, Phone, Linkedin, Instagram, Youtube,
+  Mail, Phone, Linkedin, Instagram, Youtube, Building2, HeartPulse, UserRound, Briefcase,
 } from "lucide-react";
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "551153043453";
 const WHATSAPP_DISPLAY = "(11) 5304-3453";
+const APP_URL = "https://app.turbomr.com";
+const COMERCIAL_URL = "https://comercial.turbomr.com";
 const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -50,9 +51,33 @@ const cases = [
 
 const navLinks = [
   { href: "#solucao", key: "nav.solucao" },
-  { href: "#tecnologia", key: "nav.tecnologia" },
-  { href: "#casos", key: "nav.casos" },
+  { href: "#tecnologia", key: "nav.comoFunciona" },
+  { href: "#beneficios", key: "nav.beneficios" },
+  { href: "#casos", key: "nav.resultados" },
+  { href: "#contato", key: "nav.contato" },
 ];
+
+const audienceBenefits = [
+  {
+    icon: Building2,
+    tagKey: "benefits.cards.0.tag",
+    titleKey: "benefits.cards.0.title",
+    pointsKey: "benefits.cards.0.points",
+  },
+  {
+    icon: HeartPulse,
+    tagKey: "benefits.cards.1.tag",
+    titleKey: "benefits.cards.1.title",
+    pointsKey: "benefits.cards.1.points",
+  },
+  {
+    icon: UserRound,
+    tagKey: "benefits.cards.2.tag",
+    titleKey: "benefits.cards.2.title",
+    pointsKey: "benefits.cards.2.points",
+  },
+];
+
 
 const Index = () => {
   const { t } = useI18n();
@@ -70,34 +95,36 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
-      <header className="relative z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-32 flex items-center justify-between">
-          <a href="#" className="flex items-center group" aria-label="TurboMR">
-            <img
-              src={logo}
-              alt="TurboMR"
-              className="h-32 sm:h-40 w-auto object-contain transition-transform group-hover:scale-105"
-            />
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/60">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+          <a href="#" className="flex items-center group shrink-0" aria-label="TurboMR">
+            <Logo className="transition-transform group-hover:scale-[1.02]" />
           </a>
 
-          <div className="hidden md:flex items-center gap-9 text-base font-medium text-muted-foreground">
+          <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             {navLinks.map((l) => (
-              <a key={l.href} href={l.href} className="relative hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
+              <a key={l.href} href={l.href} className="relative hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
                 {t(l.key)}
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild size="default" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 hidden sm:inline-flex text-base">
+            <LanguageSwitcher />
+            <Button asChild size="sm" variant="ghost" className="hidden md:inline-flex font-medium">
               <a href={waLink(t("wa.header"))} target="_blank" rel="noopener">
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 {t("common.whatsapp")}
               </a>
             </Button>
-            <LanguageSwitcher />
+            <Button asChild size="sm" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 font-semibold">
+              <a href={APP_URL} target="_blank" rel="noopener">
+                {t("nav.acesso")}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-muted"
+              className="lg:hidden p-2 rounded-lg hover:bg-muted"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={t("nav.menu")}
             >
@@ -108,7 +135,7 @@ const Index = () => {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-border bg-background animate-fade-in">
+          <div className="lg:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl animate-fade-in">
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((l) => (
                 <a
@@ -131,13 +158,14 @@ const Index = () => {
         )}
       </header>
 
+
       {/* HERO */}
       <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-28 overflow-hidden gradient-hero">
         <div className="absolute inset-0 grid-pattern opacity-40" />
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
-        <div className="relative max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-white opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -180,9 +208,9 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: "0.3s" }}>
-              <div className="absolute -inset-4 gradient-primary rounded-3xl blur-2xl opacity-40 animate-pulse-glow" />
-              <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+            <div className="relative opacity-0 animate-fade-in-right lg:justify-self-end w-full max-w-[560px] mx-auto" style={{ animationDelay: "0.3s" }}>
+              <div className="absolute -inset-6 gradient-primary rounded-[2rem] blur-3xl opacity-30 animate-pulse-glow" />
+              <div className="relative rounded-2xl overflow-hidden shadow-elegant border border-white/10">
                 <BeforeAfter
                   beforeSrc={mriBefore}
                   afterSrc={mriAfter}
@@ -190,14 +218,19 @@ const Index = () => {
                   imageFit="contain"
                 />
               </div>
+              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/70">
+                <Sparkles className="w-3.5 h-3.5 text-accent" />
+                <span>{t("hero.imageCaption")}</span>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* PILLARS */}
       <section id="solucao" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("pillars.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("pillars.title")}</h2>
@@ -235,7 +268,7 @@ const Index = () => {
       <section id="tecnologia" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" />
-        <div className="relative max-w-[80%] mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary-glow uppercase tracking-wider mb-3">{t("tech.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("tech.title")}</h2>
@@ -279,7 +312,7 @@ const Index = () => {
 
       {/* COMPLIANCE & CERTIFICATIONS */}
       <section id="conformidade" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("compliance.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("compliance.title")}</h2>
@@ -344,7 +377,7 @@ const Index = () => {
 
       {/* FLOW */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("flow.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("flow.title")}</h2>
@@ -391,7 +424,7 @@ const Index = () => {
       {/* BEFORE / AFTER COMPARISON */}
       <section id="comparativo" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary/10 blur-3xl animate-float" />
-        <div className="relative max-w-[80%] mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("compare.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -435,9 +468,48 @@ const Index = () => {
         </div>
       </section>
 
+      {/* BENEFITS */}
+      <section id="beneficios" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="relative max-w-7xl mx-auto">
+          <Reveal className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("benefits.kicker")}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("benefits.title")}</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">{t("benefits.subtitle")}</p>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {audienceBenefits.map((b, i) => {
+              const Icon = b.icon;
+              const points = t(b.pointsKey) as string[];
+              return (
+                <Reveal key={i} delay={i * 120}>
+                  <Card className="glass-card p-7 sm:p-8 h-full hover-lift group">
+                    <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{t(b.tagKey)}</p>
+                    <h3 className="text-xl font-bold mb-5">{t(b.titleKey)}</h3>
+                    <ul className="space-y-3">
+                      {points.map((p) => (
+                        <li key={p} className="flex gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* RESULTS / CASES */}
       <section id="casos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/40">
-        <div className="max-w-[80%] mx-auto">
+
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-end mb-14 sm:mb-16">
             <Reveal>
               <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("results.kicker")}</p>
@@ -505,7 +577,8 @@ const Index = () => {
 
       {/* PROVEN RESULTS — IMAGE COMPARISONS */}
       <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-5xl mx-auto">
+
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("showcase.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -598,7 +671,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 gradient-hero text-white relative overflow-hidden">
+      <section id="contato" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-primary-glow/20 blur-3xl animate-pulse-glow" />
         <Reveal className="relative max-w-4xl mx-auto text-center">
@@ -610,7 +683,13 @@ const Index = () => {
             <Button asChild size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold animate-pulse-glow">
               <a href={waLink(t("wa.proposal"))} target="_blank" rel="noopener">
                 <MessageCircle className="w-5 h-5" />
-                <span className="hidden sm:inline">{t("cta.btn")}</span> {WHATSAPP_DISPLAY}
+                {t("cta.btn")}
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
+              <a href={APP_URL} target="_blank" rel="noopener">
+                {t("cta.btnApp")}
+                <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
           </div>
@@ -618,13 +697,24 @@ const Index = () => {
         </Reveal>
       </section>
 
+
       {/* FOOTER */}
       <footer className="bg-secondary text-white/70">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-8 mb-12">
-            <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert shrink-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-12 mb-12">
+            <div className="flex flex-col gap-5 shrink-0 md:max-w-xs">
+              <Logo variant="light" symbolClassName="h-11 w-11" wordmarkClassName="text-2xl" />
+              <p className="text-sm text-white/60 leading-relaxed">{t("footer.tagline")}</p>
+              <Button asChild size="sm" className="self-start glass-dark text-white border-white/20 hover:bg-white/10">
+                <a href={COMERCIAL_URL} target="_blank" rel="noopener">
+                  <Briefcase className="w-4 h-4" />
+                  {t("footer.commercial")}
+                </a>
+              </Button>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 flex-1 md:max-w-3xl">
+
               {/* Coluna 1 — Navegação */}
               <div>
                 <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">{t("footer.menu")}</h3>
