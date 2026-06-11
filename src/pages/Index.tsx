@@ -538,7 +538,8 @@ const Index = () => {
 
       {/* PROVEN RESULTS — IMAGE COMPARISONS */}
       <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("showcase.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
