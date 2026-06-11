@@ -95,34 +95,36 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* NAV */}
-      <header className="relative z-50 backdrop-blur-lg bg-background/85 border-b border-border">
-        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-32 flex items-center justify-between">
-          <a href="#" className="flex items-center group" aria-label="TurboMR">
-            <img
-              src={logo}
-              alt="TurboMR"
-              className="h-32 sm:h-40 w-auto object-contain transition-transform group-hover:scale-105"
-            />
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/60">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+          <a href="#" className="flex items-center group shrink-0" aria-label="TurboMR">
+            <Logo className="transition-transform group-hover:scale-[1.02]" />
           </a>
 
-          <div className="hidden md:flex items-center gap-9 text-base font-medium text-muted-foreground">
+          <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             {navLinks.map((l) => (
-              <a key={l.href} href={l.href} className="relative hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
+              <a key={l.href} href={l.href} className="relative hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:bottom-[-6px] after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">
                 {t(l.key)}
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild size="default" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 hidden sm:inline-flex text-base">
+            <LanguageSwitcher />
+            <Button asChild size="sm" variant="ghost" className="hidden md:inline-flex font-medium">
               <a href={waLink(t("wa.header"))} target="_blank" rel="noopener">
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 {t("common.whatsapp")}
               </a>
             </Button>
-            <LanguageSwitcher />
+            <Button asChild size="sm" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 font-semibold">
+              <a href={APP_URL} target="_blank" rel="noopener">
+                {t("nav.acesso")}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-muted"
+              className="lg:hidden p-2 rounded-lg hover:bg-muted"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={t("nav.menu")}
             >
@@ -133,7 +135,7 @@ const Index = () => {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-border bg-background animate-fade-in">
+          <div className="lg:hidden border-t border-border/60 bg-background/95 backdrop-blur-xl animate-fade-in">
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((l) => (
                 <a
@@ -155,6 +157,7 @@ const Index = () => {
           </div>
         )}
       </header>
+
 
       {/* HERO */}
       <section className="relative pt-16 pb-16 lg:pt-24 lg:pb-28 overflow-hidden gradient-hero">
