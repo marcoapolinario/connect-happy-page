@@ -165,7 +165,7 @@ const Index = () => {
         <div className="absolute top-1/4 -right-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary-glow/20 blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -left-20 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-accent/20 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
-        <div className="relative max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-white opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -230,7 +230,7 @@ const Index = () => {
 
       {/* PILLARS */}
       <section id="solucao" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("pillars.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("pillars.title")}</h2>
@@ -268,7 +268,7 @@ const Index = () => {
       <section id="tecnologia" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" />
-        <div className="relative max-w-[80%] mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary-glow uppercase tracking-wider mb-3">{t("tech.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("tech.title")}</h2>
@@ -312,7 +312,7 @@ const Index = () => {
 
       {/* COMPLIANCE & CERTIFICATIONS */}
       <section id="conformidade" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("compliance.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("compliance.title")}</h2>
@@ -377,7 +377,7 @@ const Index = () => {
 
       {/* FLOW */}
       <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="max-w-2xl mb-14 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("flow.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("flow.title")}</h2>
@@ -424,7 +424,7 @@ const Index = () => {
       {/* BEFORE / AFTER COMPARISON */}
       <section id="comparativo" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-primary/10 blur-3xl animate-float" />
-        <div className="relative max-w-[80%] mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("compare.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
@@ -470,7 +470,7 @@ const Index = () => {
 
       {/* RESULTS / CASES */}
       <section id="casos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/40">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-end mb-14 sm:mb-16">
             <Reveal>
               <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("results.kicker")}</p>
@@ -538,7 +538,7 @@ const Index = () => {
 
       {/* PROVEN RESULTS — IMAGE COMPARISONS */}
       <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-[80%] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("showcase.kicker")}</p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
