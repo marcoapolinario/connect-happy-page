@@ -631,7 +631,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 gradient-hero text-white relative overflow-hidden">
+      <section id="contato" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 gradient-hero text-white relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-primary-glow/20 blur-3xl animate-pulse-glow" />
         <Reveal className="relative max-w-4xl mx-auto text-center">
@@ -643,13 +643,20 @@ const Index = () => {
             <Button asChild size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold animate-pulse-glow">
               <a href={waLink(t("wa.proposal"))} target="_blank" rel="noopener">
                 <MessageCircle className="w-5 h-5" />
-                <span className="hidden sm:inline">{t("cta.btn")}</span> {WHATSAPP_DISPLAY}
+                {t("cta.btn")}
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
+              <a href={APP_URL} target="_blank" rel="noopener">
+                {t("cta.btnApp")}
+                <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
           </div>
           <p className="mt-6 text-sm text-white/60">{t("cta.note")}</p>
         </Reveal>
       </section>
+
 
       {/* FOOTER */}
       <footer className="bg-secondary text-white/70">
