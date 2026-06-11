@@ -648,11 +648,21 @@ const Index = () => {
 
       {/* FOOTER */}
       <footer className="bg-secondary text-white/70">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-8 mb-12">
-            <img src={logo} alt="TurboMR" className="h-32 sm:h-40 w-auto object-contain brightness-0 invert shrink-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-12 mb-12">
+            <div className="flex flex-col gap-5 shrink-0 md:max-w-xs">
+              <Logo variant="light" symbolClassName="h-11 w-11" wordmarkClassName="text-2xl" />
+              <p className="text-sm text-white/60 leading-relaxed">{t("footer.tagline")}</p>
+              <Button asChild size="sm" className="self-start glass-dark text-white border-white/20 hover:bg-white/10">
+                <a href={COMERCIAL_URL} target="_blank" rel="noopener">
+                  <Briefcase className="w-4 h-4" />
+                  {t("footer.commercial")}
+                </a>
+              </Button>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 flex-1 md:max-w-3xl">
+
               {/* Coluna 1 — Navegação */}
               <div>
                 <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">{t("footer.menu")}</h3>
