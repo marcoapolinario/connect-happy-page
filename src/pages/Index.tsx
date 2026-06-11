@@ -5,8 +5,8 @@ import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { ResultsShowcase } from "@/components/ResultsShowcase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { Logo } from "@/components/Logo";
 import { useI18n } from "@/i18n";
-import heroMri from "@/assets/hero-mri.jpg";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
 import featureNoiseBefore from "@/assets/results/cervical-s2-original.jpg";
@@ -15,17 +15,18 @@ import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
 import featureResAfter from "@/assets/results/joelho-s1-turbo-v2.jpg";
 import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
 import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
-import logo from "@/assets/turbomr-logo-upload.png";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
   Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
-  Mail, Phone, Linkedin, Instagram, Youtube,
+  Mail, Phone, Linkedin, Instagram, Youtube, Building2, HeartPulse, UserRound, Briefcase,
 } from "lucide-react";
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "551153043453";
 const WHATSAPP_DISPLAY = "(11) 5304-3453";
+const APP_URL = "https://app.turbomr.com";
+const COMERCIAL_URL = "https://comercial.turbomr.com";
 const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -50,9 +51,33 @@ const cases = [
 
 const navLinks = [
   { href: "#solucao", key: "nav.solucao" },
-  { href: "#tecnologia", key: "nav.tecnologia" },
-  { href: "#casos", key: "nav.casos" },
+  { href: "#tecnologia", key: "nav.comoFunciona" },
+  { href: "#beneficios", key: "nav.beneficios" },
+  { href: "#casos", key: "nav.resultados" },
+  { href: "#contato", key: "nav.contato" },
 ];
+
+const audienceBenefits = [
+  {
+    icon: Building2,
+    tagKey: "benefits.cards.0.tag",
+    titleKey: "benefits.cards.0.title",
+    pointsKey: "benefits.cards.0.points",
+  },
+  {
+    icon: HeartPulse,
+    tagKey: "benefits.cards.1.tag",
+    titleKey: "benefits.cards.1.title",
+    pointsKey: "benefits.cards.1.points",
+  },
+  {
+    icon: UserRound,
+    tagKey: "benefits.cards.2.tag",
+    titleKey: "benefits.cards.2.title",
+    pointsKey: "benefits.cards.2.points",
+  },
+];
+
 
 const Index = () => {
   const { t } = useI18n();
