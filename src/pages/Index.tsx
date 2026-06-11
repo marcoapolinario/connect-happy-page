@@ -468,8 +468,47 @@ const Index = () => {
         </div>
       </section>
 
+      {/* BENEFITS */}
+      <section id="beneficios" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="relative max-w-7xl mx-auto">
+          <Reveal className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("benefits.kicker")}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("benefits.title")}</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">{t("benefits.subtitle")}</p>
+          </Reveal>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {audienceBenefits.map((b, i) => {
+              const Icon = b.icon;
+              const points = t(b.pointsKey) as string[];
+              return (
+                <Reveal key={i} delay={i * 120}>
+                  <Card className="glass-card p-7 sm:p-8 h-full hover-lift group">
+                    <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">{t(b.tagKey)}</p>
+                    <h3 className="text-xl font-bold mb-5">{t(b.titleKey)}</h3>
+                    <ul className="space-y-3">
+                      {points.map((p) => (
+                        <li key={p} className="flex gap-3 text-sm text-muted-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* RESULTS / CASES */}
       <section id="casos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/40">
+
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-end mb-14 sm:mb-16">
             <Reveal>
