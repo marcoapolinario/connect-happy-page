@@ -1,6 +1,11 @@
 {
   "nav": {
     "solucao": "Solução",
+    "comoFunciona": "Como Funciona",
+    "beneficios": "Benefícios",
+    "resultados": "Resultados",
+    "contato": "Contato",
+    "acesso": "Acesso",
     "tecnologia": "Tecnologia",
     "comparativo": "Antes/Depois",
     "casos": "Resultados",
