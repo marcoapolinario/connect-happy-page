@@ -208,9 +208,9 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="relative opacity-0 animate-fade-in-right" style={{ animationDelay: "0.3s" }}>
-              <div className="absolute -inset-4 gradient-primary rounded-3xl blur-2xl opacity-40 animate-pulse-glow" />
-              <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+            <div className="relative opacity-0 animate-fade-in-right lg:justify-self-end w-full max-w-[560px] mx-auto" style={{ animationDelay: "0.3s" }}>
+              <div className="absolute -inset-6 gradient-primary rounded-[2rem] blur-3xl opacity-30 animate-pulse-glow" />
+              <div className="relative rounded-2xl overflow-hidden shadow-elegant border border-white/10">
                 <BeforeAfter
                   beforeSrc={mriBefore}
                   afterSrc={mriAfter}
@@ -218,7 +218,12 @@ const Index = () => {
                   imageFit="contain"
                 />
               </div>
+              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/70">
+                <Sparkles className="w-3.5 h-3.5 text-accent" />
+                <span>{t("hero.imageCaption")}</span>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
