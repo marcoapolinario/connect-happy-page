@@ -114,19 +114,15 @@
     ]
   },
   "tech": {
-    "kicker": "Core Technology",
-    "title": "O que a IA pode fazer para sua Ressonância?",
-    "subtitle": "Transforma a aquisição de exames inteiros com redução de tempo — imagine fazer uma coluna lombar com menos de 5 minutos em equipamentos de 1,5T!",
+    "kicker": "TurboMR IA",
+    "title": "Como funciona",
+    "subtitle": "Nosso pipeline de IA transforma imagens ruidosas em diagnósticos mais confiáveis e precisos.",
     "pipeline": [
-      { "title": "Denoising", "desc": "Redes neurais profundas removem o ruído da aquisição rápida, preservando estrutura do sinal.", "tag": "↓ Ruído (SNR)" },
-      { "title": "Super-Resolução", "desc": "Recuperação inteligente da resolução espacial. Reconstrói detalhes finos e bordas.", "tag": "Matriz Elevada" },
-      { "title": "Nitidez Final", "desc": "Ajuste fino de contraste e realce de bordas anatômicas para qualidade superior à original.", "tag": "Diagnóstico Claro" }
+      { "step": "1", "title": "Protocolo otimizado", "desc": "Ajustamos o protocolo da RM para máxima eficiência.", "imgTag": "IMAGEM RUIDOSA", "cardTag": "RM OTIMIZADA", "cardDesc": "Protocolo mais rápido gera mais ruído na imagem." },
+      { "step": "2", "title": "IA TurboMR", "desc": "A imagem ruidosa é enviada para nossa inteligência artificial.", "imgTag": "", "cardTag": "IA TURBOMR", "cardDesc": "Nossa IA avançada remove o ruído e preserva os detalhes clínicos." },
+      { "step": "3", "title": "Imagem aprimorada", "desc": "A IA remove o ruído e devolve uma imagem nítida e precisa.", "imgTag": "IMAGEM APRIMORADA", "cardTag": "IMAGEM FINAL", "cardDesc": "Retornamos uma imagem nítida, pronta para diagnóstico." }
     ],
-    "highlights": [
-      { "title": "~2 minutos", "sub": "por série" },
-      { "title": "100% DICOM", "sub": "compatível" },
-      { "title": "Sem artefatos", "sub": "zero alucinações" }
-    ]
+    "footer": { "title": "Sem dados armazenados", "desc": "Segurança e privacidade garantidas." }
   },
   "compliance": {
     "kicker": "Você pode confiar",
