@@ -15,6 +15,9 @@ import featureResBefore from "@/assets/results/joelho-s1-original.jpg";
 import featureResAfter from "@/assets/results/joelho-s1-turbo-v2.jpg";
 import featureDiagBefore from "@/assets/results/lombar-s1-original.jpg";
 import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
+import step1Img from "@/assets/howitworks/step1.jpg";
+import step2Img from "@/assets/howitworks/step2.jpg";
+import step3Img from "@/assets/howitworks/step3.jpg";
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
@@ -264,47 +267,76 @@ const Index = () => {
         </div>
       </section>
 
-      {/* TECHNOLOGY PIPELINE */}
+      {/* HOW IT WORKS */}
       <section id="tecnologia" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-secondary-foreground relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" />
         <div className="relative max-w-7xl mx-auto">
-          <Reveal className="max-w-2xl mb-14 sm:mb-16">
-            <p className="text-sm font-semibold text-primary-glow uppercase tracking-wider mb-3">{t("tech.kicker")}</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("tech.title")}</h2>
-            <p className="text-base sm:text-lg text-white/70">{t("tech.subtitle")}</p>
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 sm:mb-16">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-glow/10 border border-primary-glow/30 mb-4">
+                  <Cpu className="w-3.5 h-3.5 text-primary-glow" />
+                  <span className="text-xs font-semibold text-primary-glow uppercase tracking-wider">{t("tech.kicker")}</span>
+                </div>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
+                  Como <span className="gradient-text">funciona</span>
+                </h2>
+              </div>
+              <p className="text-base sm:text-lg text-white/70 max-w-md leading-relaxed">
+                {t("tech.subtitle")}
+              </p>
+            </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {(t("tech.pipeline") as any[]).map((step, i) => (
-              <Reveal key={i} delay={i * 150}>
-                <div className="relative p-7 sm:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover-lift h-full">
-                  <div className="text-5xl sm:text-6xl font-bold gradient-text mb-4">{pipelineNumbers[i]}</div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-white/70 mb-6 text-sm leading-relaxed">{step.desc}</p>
-                  <div className="inline-flex px-3 py-1.5 rounded-full bg-primary-glow/20 text-primary-glow text-xs font-semibold border border-primary-glow/30">
-                    {step.tag}
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-6 items-stretch">
+            {(t("tech.pipeline") as any[]).map((step, i) => {
+              const imgs = [step1Img, step2Img, step3Img];
+              const CardIcon = [Cpu, Sparkles, CheckCircle2][i];
+              return (
+                <Reveal key={i} delay={i * 150}>
+                  <div className="flex flex-col items-center text-center h-full">
+                    <div className="w-12 h-12 rounded-full border-2 border-primary-glow flex items-center justify-center mb-4 bg-secondary shadow-glow">
+                      <span className="text-lg font-bold text-primary-glow">{step.step}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                    <p className="text-sm text-white/70 leading-relaxed mb-5 max-w-[260px]">{step.desc}</p>
+
+                    <div className="relative w-full rounded-2xl overflow-hidden border border-primary-glow/30 bg-secondary/60 mb-4 aspect-[4/3]">
+                      {step.imgTag && (
+                        <div className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-primary-glow/90 text-secondary text-[10px] font-bold uppercase tracking-wider">
+                          {step.imgTag}
+                        </div>
+                      )}
+                      <img src={imgs[i]} alt={step.title} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+
+                    <div className="w-full rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 flex items-start gap-3 text-left mt-auto">
+                      <div className="w-10 h-10 rounded-full border border-primary-glow/50 bg-primary-glow/10 flex items-center justify-center shrink-0">
+                        <CardIcon className="w-4 h-4 text-primary-glow" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-primary-glow uppercase tracking-wider mb-1">{step.cardTag}</div>
+                        <p className="text-xs text-white/70 leading-relaxed">{step.cardDesc}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
 
           <Reveal>
-            <div className="grid sm:grid-cols-3 gap-4 pt-8 border-t border-white/10">
-              {(t("tech.highlights") as any[]).map((h, i) => {
-                const Icons = [Clock, Shield, CheckCircle2];
-                const Icon = Icons[i];
-                return (
-                  <div key={i} className="flex items-center gap-3">
-                    <Icon className="w-6 h-6 text-accent" />
-                    <div>
-                      <div className="font-bold">{h.title}</div>
-                      <div className="text-xs text-white/60">{h.sub}</div>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="mt-12 flex justify-center">
+              <div className="inline-flex items-center gap-4 rounded-full border border-primary-glow/40 bg-white/5 backdrop-blur-sm px-6 py-3">
+                <div className="w-10 h-10 rounded-full border border-primary-glow/60 bg-primary-glow/10 flex items-center justify-center shrink-0">
+                  <Lock className="w-4 h-4 text-primary-glow" />
+                </div>
+                <div className="text-left">
+                  <div className="font-bold text-sm">{t("tech.footer.title")}</div>
+                  <div className="text-xs text-white/60">{t("tech.footer.desc")}</div>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
