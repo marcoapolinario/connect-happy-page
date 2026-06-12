@@ -302,13 +302,13 @@ const Index = () => {
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                     <p className="text-sm text-white/70 leading-relaxed mb-5 max-w-[260px]">{step.desc}</p>
 
-                    <div className="relative w-full rounded-2xl overflow-hidden border border-primary-glow/30 bg-secondary/60 mb-4 aspect-[4/3]">
+                    <div className="relative w-full rounded-2xl overflow-hidden border border-primary-glow/30 bg-secondary/60 mb-4 aspect-[4/3] flex items-center justify-center">
                       {step.imgTag && (
                         <div className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-primary-glow/90 text-secondary text-[10px] font-bold uppercase tracking-wider">
                           {step.imgTag}
                         </div>
                       )}
-                      <img src={imgs[i]} alt={step.title} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={imgs[i]} alt={step.title} className="max-w-full max-h-full object-contain mx-auto" loading="lazy" />
                     </div>
 
                     <div className="w-full rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 flex items-start gap-3 text-left mt-auto">
