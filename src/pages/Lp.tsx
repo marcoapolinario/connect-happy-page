@@ -108,16 +108,16 @@ const Lp = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* HEADER simplificado */}
-      <header className="border-b border-border bg-background">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
-          <Link to="/" className="flex items-center group" aria-label="TurboMR">
-            <img src={logo} alt="TurboMR" className="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+      <header className="border-b border-border bg-background sticky top-0 z-40 backdrop-blur-xl bg-background/90">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+          <Link to="/" className="flex items-center group min-w-0" aria-label="TurboMR">
+            <img src={logo} alt="TurboMR" className="h-10 sm:h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
           <div className="flex items-center gap-2">
             <Button asChild variant="ghost" size="sm">
               <Link to="/">
                 <ArrowLeft className="w-4 h-4" />
-                {t("lp.back")}
+                <span className="hidden sm:inline">{t("lp.back")}</span>
               </Link>
             </Button>
             <LanguageSwitcher />
