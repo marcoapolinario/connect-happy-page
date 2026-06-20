@@ -303,8 +303,18 @@ const Index = () => {
                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                     <p className="text-sm text-white/70 leading-relaxed mb-5 max-w-[260px]">{step.desc}</p>
 
-                    <div className="relative w-full rounded-2xl mb-4 aspect-square flex items-center justify-center">
-                      <img src={imgs[i]} alt={step.title} className="max-w-full max-h-full object-contain mx-auto" loading="lazy" />
+                    <div className="relative w-full rounded-2xl mb-4 aspect-square overflow-hidden">
+                      {i === 1 ? (
+                        <NeuralWave className="absolute inset-0" />
+                      ) : (
+                        <img
+                          src={imgs[i]}
+                          alt={step.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
                     </div>
 
                     <div className="w-full rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 flex items-start gap-3 text-left mt-auto">
