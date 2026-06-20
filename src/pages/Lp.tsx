@@ -126,18 +126,21 @@ const Lp = () => {
       </header>
 
       {/* HERO */}
-      <section className="relative py-16 lg:py-20 overflow-hidden gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <section className="relative py-16 lg:py-24 overflow-hidden gradient-hero">
+        <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
+        <div className="absolute top-1/3 -left-32 w-96 h-96 rounded-full bg-primary/15 blur-3xl pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <Reveal>
               <div>
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full mb-4">
-                  {t("lp.kicker")}
-                </span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
+                <div className="status-pill mb-5">
+                  <span className="live-dot" />
+                  <span>{t("lp.kicker")}</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-5 tracking-tight">
                   {t("lp.h1")}
                 </h1>
-                <p className="text-lg text-muted-foreground mb-7 leading-relaxed">
+                <p className="text-lg text-muted-foreground mb-7 leading-relaxed max-w-xl">
                   {t("lp.subheadline")}
                 </p>
 
@@ -154,63 +157,66 @@ const Lp = () => {
 
             {/* FORM */}
             <Reveal delay={150}>
-              <Card id="form" className="p-6 sm:p-8 border-border/50 shadow-card">
-                {!done ? (
-                  <>
-                    <h2 className="text-2xl font-bold mb-1">{t("lp.formTitle")}</h2>
-                    <p className="text-sm text-muted-foreground mb-6">{t("lp.formSub")}</p>
-                    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-                      <div>
-                        <Label htmlFor="name">{t("lp.fields.name")}</Label>
-                        <Input id="name" name="name" maxLength={120} required aria-invalid={!!errors.name} />
-                        {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
-                      </div>
-                      <div>
-                        <Label htmlFor="email">{t("lp.fields.email")}</Label>
-                        <Input id="email" name="email" type="email" maxLength={255} required aria-invalid={!!errors.email} />
-                        {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <Label htmlFor="role">{t("lp.fields.role")}</Label>
-                          <Input id="role" name="role" maxLength={120} required aria-invalid={!!errors.role} />
-                          {errors.role && <p className="text-xs text-destructive mt-1">{errors.role}</p>}
+              <div className="relative">
+                <div className="absolute -inset-8 bg-primary/15 blur-[100px] rounded-full pointer-events-none" />
+                <Card id="form" className="relative p-6 sm:p-8 border-white/10 rounded-2xl backdrop-blur-xl shadow-elegant">
+                  {!done ? (
+                    <>
+                      <h2 className="text-2xl font-bold mb-1">{t("lp.formTitle")}</h2>
+                      <p className="text-sm text-muted-foreground mb-6">{t("lp.formSub")}</p>
+                      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                        <div className="space-y-2">
+                          <Label htmlFor="name" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("lp.fields.name")}</Label>
+                          <Input id="name" name="name" maxLength={120} required aria-invalid={!!errors.name} className="h-11 rounded-xl" />
+                          {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
                         </div>
-                        <div>
-                          <Label htmlFor="company">{t("lp.fields.company")}</Label>
-                          <Input id="company" name="company" maxLength={200} required aria-invalid={!!errors.company} />
-                          {errors.company && <p className="text-xs text-destructive mt-1">{errors.company}</p>}
+                        <div className="space-y-2">
+                          <Label htmlFor="email" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("lp.fields.email")}</Label>
+                          <Input id="email" name="email" type="email" maxLength={255} required aria-invalid={!!errors.email} className="h-11 rounded-xl" />
+                          {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                         </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="role" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("lp.fields.role")}</Label>
+                            <Input id="role" name="role" maxLength={120} required aria-invalid={!!errors.role} className="h-11 rounded-xl" />
+                            {errors.role && <p className="text-xs text-destructive mt-1">{errors.role}</p>}
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="company" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("lp.fields.company")}</Label>
+                            <Input id="company" name="company" maxLength={200} required aria-invalid={!!errors.company} className="h-11 rounded-xl" />
+                            {errors.company && <p className="text-xs text-destructive mt-1">{errors.company}</p>}
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="message" className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("lp.fields.message")}</Label>
+                          <Textarea id="message" name="message" maxLength={2000} rows={4} className="rounded-xl" />
+                        </div>
+                        <Button type="submit" disabled={submitting} className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl hover-glow transition-all">
+                          {submitting ? (
+                            <>
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                              {t("lp.submitting")}
+                            </>
+                          ) : (
+                            t("lp.submit")
+                          )}
+                        </Button>
+                        <p className="text-xs text-muted-foreground text-center">
+                          {t("lp.privacy")}
+                        </p>
+                      </form>
+                    </>
+                  ) : (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 rounded-full bg-success/15 flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle2 className="w-9 h-9 text-success" />
                       </div>
-                      <div>
-                        <Label htmlFor="message">{t("lp.fields.message")}</Label>
-                        <Textarea id="message" name="message" maxLength={2000} rows={4} />
-                      </div>
-                      <Button type="submit" disabled={submitting} className="w-full gradient-primary text-white border-0 shadow-glow hover:opacity-90">
-                        {submitting ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            {t("lp.submitting")}
-                          </>
-                        ) : (
-                          t("lp.submit")
-                        )}
-                      </Button>
-                      <p className="text-xs text-muted-foreground text-center">
-                        {t("lp.privacy")}
-                      </p>
-                    </form>
-                  </>
-                ) : (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 rounded-full bg-success/15 flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle2 className="w-9 h-9 text-success" />
+                      <h2 className="text-2xl font-bold mb-2">{t("lp.thanksTitle")}</h2>
+                      <p className="text-muted-foreground">{t("lp.thanksDesc")}</p>
                     </div>
-                    <h2 className="text-2xl font-bold mb-2">{t("lp.thanksTitle")}</h2>
-                    <p className="text-muted-foreground">{t("lp.thanksDesc")}</p>
-                  </div>
-                )}
-              </Card>
+                  )}
+                </Card>
+              </div>
             </Reveal>
           </div>
         </div>
