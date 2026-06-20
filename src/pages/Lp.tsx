@@ -108,16 +108,16 @@ const Lp = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* HEADER simplificado */}
-      <header className="border-b border-border bg-background">
-        <nav className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
-          <Link to="/" className="flex items-center group" aria-label="TurboMR">
-            <img src={logo} alt="TurboMR" className="h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+      <header className="border-b border-border bg-background sticky top-0 z-40 backdrop-blur-xl bg-background/90">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+          <Link to="/" className="flex items-center group min-w-0" aria-label="TurboMR">
+            <img src={logo} alt="TurboMR" className="h-10 sm:h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
           <div className="flex items-center gap-2">
             <Button asChild variant="ghost" size="sm">
               <Link to="/">
                 <ArrowLeft className="w-4 h-4" />
-                {t("lp.back")}
+                <span className="hidden sm:inline">{t("lp.back")}</span>
               </Link>
             </Button>
             <LanguageSwitcher />
@@ -127,7 +127,7 @@ const Lp = () => {
 
       {/* HERO */}
       <section className="relative py-16 lg:py-20 overflow-hidden gradient-hero">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <Reveal>
               <div>
@@ -218,7 +218,7 @@ const Lp = () => {
 
       {/* BENEFITS */}
       <section className="py-16 lg:py-20 bg-muted/30">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center mb-12 max-w-3xl mx-auto">
               <span className="inline-block text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full mb-3">
@@ -250,7 +250,7 @@ const Lp = () => {
 
       {/* CTA FINAL */}
       <section className="py-16 lg:py-20">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Card className="p-8 sm:p-12 text-center gradient-hero border-border/50">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("lp.finalTitle")}</h2>
@@ -265,7 +265,7 @@ const Lp = () => {
 
       {/* FOOTER mínimo */}
       <footer className="border-t border-border py-6 bg-background">
-        <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-muted-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} TurboMR
         </div>
       </footer>
