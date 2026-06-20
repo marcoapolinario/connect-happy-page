@@ -563,7 +563,8 @@ const Index = () => {
 
           <Reveal>
             <Card className="overflow-hidden border-border/50 shadow-elegant">
-              <div className="grid grid-cols-12 gap-2 sm:gap-4 p-3 sm:p-4 bg-secondary text-white text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
+              {/* Header — somente em sm+ */}
+              <div className="hidden sm:grid grid-cols-12 gap-4 p-4 bg-secondary text-white text-xs font-semibold uppercase tracking-wider">
                 <div className="col-span-4">{t("results.table.region")}</div>
                 <div className="col-span-2 text-right">{t("results.table.standard")}</div>
                 <div className="col-span-2 text-right">{t("results.table.turbo")}</div>
@@ -572,21 +573,42 @@ const Index = () => {
               {cases.map((c, i) => (
                 <div
                   key={c.regionKey}
-                  className="grid grid-cols-12 gap-2 sm:gap-4 p-3 sm:p-4 items-center border-b border-border last:border-0 hover:bg-muted/30 transition-colors text-sm"
+                  className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors"
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
-                  <div className="col-span-4 font-semibold text-xs sm:text-sm">{t(`results.regions.${c.regionKey}`)}</div>
-                  <div className="col-span-2 text-right text-muted-foreground tabular-nums text-xs sm:text-sm">{c.standard}</div>
-                  <div className="col-span-2 text-right font-bold text-primary tabular-nums text-xs sm:text-sm">{c.turbo}</div>
-                  <div className="col-span-4">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className="flex-1 h-2 rounded-full bg-muted overflow-hidden">
-                        <div
-                          className="h-full gradient-primary rounded-full transition-all duration-1000"
-                          style={{ width: `${c.reduction}%` }}
-                        />
+                  {/* Mobile: card empilhado */}
+                  <div className="sm:hidden p-4 space-y-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="font-semibold text-sm">{t(`results.regions.${c.regionKey}`)}</span>
+                      <span className="font-bold text-success text-sm tabular-nums">-{c.reduction}%</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-xs">
+                      <div>
+                        <div className="text-muted-foreground uppercase tracking-wider text-[10px] mb-0.5">{t("results.table.standard")}</div>
+                        <div className="tabular-nums font-medium">{c.standard}</div>
                       </div>
-                      <span className="font-bold text-success text-xs sm:text-sm tabular-nums w-10 sm:w-12 text-right">-{c.reduction}%</span>
+                      <div>
+                        <div className="text-primary uppercase tracking-wider text-[10px] mb-0.5">{t("results.table.turbo")}</div>
+                        <div className="tabular-nums font-bold text-primary">{c.turbo}</div>
+                      </div>
+                    </div>
+                    <div className="h-2 rounded-full bg-muted overflow-hidden">
+                      <div className="h-full gradient-primary rounded-full transition-all duration-1000" style={{ width: `${c.reduction}%` }} />
+                    </div>
+                  </div>
+
+                  {/* Desktop: grade 12 colunas */}
+                  <div className="hidden sm:grid grid-cols-12 gap-4 p-4 items-center text-sm">
+                    <div className="col-span-4 font-semibold">{t(`results.regions.${c.regionKey}`)}</div>
+                    <div className="col-span-2 text-right text-muted-foreground tabular-nums">{c.standard}</div>
+                    <div className="col-span-2 text-right font-bold text-primary tabular-nums">{c.turbo}</div>
+                    <div className="col-span-4">
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1 h-2 rounded-full bg-muted overflow-hidden">
+                          <div className="h-full gradient-primary rounded-full transition-all duration-1000" style={{ width: `${c.reduction}%` }} />
+                        </div>
+                        <span className="font-bold text-success tabular-nums w-12 text-right">-{c.reduction}%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
