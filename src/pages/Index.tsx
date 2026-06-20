@@ -219,6 +219,7 @@ const Index = () => {
                   afterSrc={mriAfter}
                   alt={t("hero.imageAlt")}
                   imageFit="contain"
+                  priority
                 />
               </div>
               <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/70">
