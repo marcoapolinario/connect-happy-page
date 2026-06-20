@@ -171,24 +171,24 @@ const Index = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="text-white opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-accent" />
-                <span className="text-xs font-medium">{t("hero.badge")}</span>
+              <div className="status-pill mb-6">
+                <span className="live-dot" />
+                <span>{t("hero.badge")}</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] mb-6">
                 {t("hero.titleStart")} <span className="gradient-text">{t("hero.titleHighlight")}</span> {t("hero.titleEnd")}
               </h1>
-              <p className="text-base sm:text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
+              <p className="text-base sm:text-lg text-white/70 mb-8 max-w-xl leading-relaxed">
                 {t("hero.subtitle")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Button asChild size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold animate-pulse-glow">
+                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-xl hover-glow transition-all">
                   <a href={waLink(t("wa.demo"))} target="_blank" rel="noopener">
                     <MessageCircle className="w-5 h-5" />
                     {t("hero.ctaDemo")}
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white">
+                <Button asChild size="lg" variant="outline" className="bg-white/5 border-white/15 text-white hover:bg-white/10 hover:text-white hover:border-white/25 rounded-xl backdrop-blur-sm">
                   <a href={waLink(t("wa.trial"))} target="_blank" rel="noopener">
                     {t("hero.ctaTrial")}
                     <ArrowRight className="w-4 h-4" />
