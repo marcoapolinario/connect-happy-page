@@ -6,6 +6,7 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import { ResultsShowcase } from "@/components/ResultsShowcase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
+import { NeuralWave } from "@/components/NeuralWave";
 import { useI18n } from "@/i18n";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
