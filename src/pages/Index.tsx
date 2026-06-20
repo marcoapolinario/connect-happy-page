@@ -19,7 +19,7 @@ import featureDiagAfter from "@/assets/results/lombar-s1-turbo.jpg";
 import step1Img from "@/assets/howitworks/step1.jpg";
 import step2Img from "@/assets/howitworks/step2.jpg";
 import step3Img from "@/assets/howitworks/step3.jpg";
-import processingVideo from "@/assets/howitworks/processing.mp4.asset.json";
+
 import {
   Zap, Shield, TrendingUp, CheckCircle2, Activity, Cpu, Server,
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
@@ -308,7 +308,8 @@ const Index = () => {
                     <div className="relative w-full rounded-2xl mb-4 aspect-square overflow-hidden bg-secondary">
                       {i === 1 ? (
                         <video
-                          src={processingVideo.url}
+                          src="/videos/processing.mp4"
+                          poster="/videos/processing-poster.jpg"
                           className="absolute inset-0 w-full h-full object-cover"
                           autoPlay
                           loop
@@ -316,6 +317,7 @@ const Index = () => {
                           playsInline
                           preload="metadata"
                         />
+
                       ) : (
                         <img
                           src={imgs[i]}
