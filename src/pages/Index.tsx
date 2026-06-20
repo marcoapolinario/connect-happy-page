@@ -871,9 +871,9 @@ const Index = () => {
         target="_blank"
         rel="noopener"
         aria-label="WhatsApp"
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-success flex items-center justify-center shadow-glow hover:scale-110 transition-transform animate-pulse-glow"
+        className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-success flex items-center justify-center shadow-glow hover:scale-110 transition-transform animate-pulse-glow"
       >
-        <MessageCircle className="w-7 h-7 text-white" />
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
       </a>
     </div>
   );
