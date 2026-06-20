@@ -9,6 +9,8 @@ interface BeforeAfterProps {
   alt?: string;
   className?: string;
   imageFit?: "cover" | "contain";
+  /** Set true for above-the-fold (hero) images to prioritize LCP. */
+  priority?: boolean;
 }
 
 export const BeforeAfter = ({
@@ -19,6 +21,7 @@ export const BeforeAfter = ({
   alt = "Comparativo antes e depois",
   className,
   imageFit = "cover",
+  priority = false,
 }: BeforeAfterProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
@@ -80,7 +83,9 @@ export const BeforeAfter = ({
       <img
         src={afterSrc}
         alt={`${alt} - depois`}
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        {...(priority ? { fetchPriority: "high" as const } : {})}
         width={1024}
         height={1024}
         className={cn("absolute inset-0 w-full h-full pointer-events-none", imageFitClass)}
@@ -94,7 +99,9 @@ export const BeforeAfter = ({
         <img
           src={beforeSrc}
           alt={`${alt} - antes`}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
+          {...(priority ? { fetchPriority: "high" as const } : {})}
           width={1024}
           height={1024}
           className={cn("absolute inset-0 w-full h-full pointer-events-none", imageFitClass)}
