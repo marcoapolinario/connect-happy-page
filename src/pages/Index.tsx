@@ -309,6 +309,7 @@ const Index = () => {
                       {i === 1 ? (
                         <video
                           src="/videos/processing.mp4"
+                          poster="/videos/processing-poster.jpg"
                           className="absolute inset-0 w-full h-full object-cover"
                           autoPlay
                           loop
@@ -316,6 +317,7 @@ const Index = () => {
                           playsInline
                           preload="metadata"
                         />
+
                       ) : (
                         <img
                           src={imgs[i]}
