@@ -308,7 +308,7 @@ const Index = () => {
                     <div className="relative w-full rounded-2xl mb-4 aspect-square overflow-hidden bg-secondary">
                       {i === 1 ? (
                         <video
-                          src={processingVideo.url}
+                          src="/videos/processing.mp4"
                           className="absolute inset-0 w-full h-full object-cover"
                           autoPlay
                           loop
