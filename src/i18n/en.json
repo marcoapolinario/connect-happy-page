@@ -6,7 +6,8 @@
     "casos": "Results",
     "planos": "Plans",
     "faq": "FAQ",
-    "menu": "Menu"
+    "menu": "Menu",
+    "blog": "Blog"
   },
   "common": {
     "whatsapp": "WhatsApp"
@@ -333,12 +334,30 @@
     "benefitsTitle": "Results that show up in revenue and in waiting times",
     "benefitsSub": "Proven technology, focused on revenue and on what matters most: the patient.",
     "benefits": [
-      { "title": "+40% capacity", "desc": "More scans in the same shift, with the same team and the same scanner. Grow without CAPEX." },
-      { "title": "Immediate extra revenue", "desc": "Every additional scan is direct margin. Typical ROI in a few months, with a clear, measurable payback." },
-      { "title": "Patient comfort", "desc": "Time inside the scanner cut in half. Less claustrophobia, fewer motion artifacts, better experience." },
-      { "title": "Shorter waiting list", "desc": "Reduce the waiting time for an MRI and improve referring physicians' satisfaction." },
-      { "title": "Diagnostic quality preserved", "desc": "AI dedicated to reconstruction: keeps signal fidelity and report confidence." },
-      { "title": "Painless deployment", "desc": "Compatible with GE, Siemens and Philips. Integrates with your PACS via DICOM, no change to the radiologist's workflow." }
+      {
+        "title": "+40% capacity",
+        "desc": "More scans in the same shift, with the same team and the same scanner. Grow without CAPEX."
+      },
+      {
+        "title": "Immediate extra revenue",
+        "desc": "Every additional scan is direct margin. Typical ROI in a few months, with a clear, measurable payback."
+      },
+      {
+        "title": "Patient comfort",
+        "desc": "Time inside the scanner cut in half. Less claustrophobia, fewer motion artifacts, better experience."
+      },
+      {
+        "title": "Shorter waiting list",
+        "desc": "Reduce the waiting time for an MRI and improve referring physicians' satisfaction."
+      },
+      {
+        "title": "Diagnostic quality preserved",
+        "desc": "AI dedicated to reconstruction: keeps signal fidelity and report confidence."
+      },
+      {
+        "title": "Painless deployment",
+        "desc": "Compatible with GE, Siemens and Philips. Integrates with your PACS via DICOM, no change to the radiologist's workflow."
+      }
     ],
     "finalTitle": "Ready to boost your MRI productivity?",
     "finalSub": "Talk to our team and find out in minutes how much your operation can grow.",

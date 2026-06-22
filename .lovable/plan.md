@@ -1,104 +1,135 @@
 
-# Landing Page de Conversão — TurboMR (Google Ads)
+# Blog SEO + Área Administrativa — TurboMR
 
 ## Objetivo
-Capturar leads qualificados vindos do Google Ads e levá-los rapidamente para **WhatsApp** ou **e-mail**, com mensagem focada em **ROI/lucratividade** do parque de RM — não em "tecnologia bonita".
+Construir um blog otimizado para SEO orgânico em PT-BR, com **10 artigos seed** sobre IA aplicada a Ressonância Magnética, baseados nos 3 PDFs anexados e em conteúdos de referência (SwiftMR/AIRS, Subtle Medical, VX Medical). Inclui **área admin** protegida para o usuário criar/editar/publicar novos posts depois.
 
-## Persona principal
-**Diretor/Gestor de clínica de diagnóstico por imagem** (ou dono de rede pequena/média no Brasil)
-- Dor #1: fila de espera longa, agenda saturada, RM é o gargalo e o ativo mais caro
-- Dor #2: custo por exame alto (técnico, energia, ocupação de sala), margem comprimida por convênios
-- Dor #3: pressão para trocar/atualizar equipamento (CAPEX alto) vs. fazer mais com o que já tem
-- KPIs que ele olha: exames/dia por sala, ticket médio, taxa de ocupação, NPS do paciente
-- Decisor secundário: coordenador técnico / físico médico (valida qualidade de imagem)
+## Personas-alvo do blog
+- **Gestor/dono de clínica** (decisor financeiro): busca "como aumentar produtividade da RM", "ROI ressonância", "reduzir custo por exame"
+- **Radiologista chefe / físico médico** (decisor técnico): busca "deep learning MRI reconstruction", "redução de tempo de aquisição com IA", "qualidade diagnóstica IA RM"
 
-## Persona secundária
-**Radiologista chefe** — preocupado com qualidade diagnóstica e conforto do paciente (menos tempo no tubo = menos movimento = menos repetição).
+## Estrutura do blog
 
-## Análise competitiva — o que copiar e o que evitar
+### Rotas (público)
+- `/blog` — listagem de posts (paginada, filtro por categoria, busca)
+- `/blog/:slug` — post individual com SEO completo + JSON-LD Article + breadcrumbs
+- `/blog/categoria/:slug` — listagem por categoria
 
-**SwiftMR (AIRS Medical, Coreia)**
-- Mensagem: "Faster Scans, Superior Image Quality" + prova social global (países, hospitais, estudos)
-- Demo: upload de DICOM → recebe comparativo no e-mail (excelente gerador de lead qualificado)
-- Foco em radiologista, não em gestor financeiro
+### Rotas (admin protegidas)
+- `/admin/login` — login (Lovable Cloud auth com email/senha)
+- `/admin/blog` — listagem com filtros (rascunho/publicado), busca
+- `/admin/blog/novo` — criar post
+- `/admin/blog/editar/:id` — editar
+- Botão "publicar/despublicar", upload de imagem de capa
 
-**Subtle Medical (EUA)**
-- SubtleMR / SubtlePET, FDA cleared, foco institucional/enterprise
-- Site corporativo, ciclo de venda longo, pouca conversão direta
+## Stack técnica
 
-**Gap que a TurboMR explora**
-- Falam para o radiologista; **ninguém fala para o dono que quer ROI em R$**
-- Ninguém oferece atendimento consultivo rápido em PT-BR via WhatsApp
-- Posicionamento TurboMR: "**Até 2x mais exames por dia no mesmo equipamento, sem trocar a máquina**"
-
-## Estrutura da landing page (rota nova `/lp-ads`)
+### Backend (Lovable Cloud / Supabase)
+**Migração — tabelas e RLS:**
 
 ```text
-1. HERO  (above the fold — decide o clique do anúncio)
-   H1: Dobre a capacidade da sua Ressonância
-       sem trocar o equipamento
-   Sub: IA que reduz o tempo de aquisição em até 50% mantendo
-        qualidade diagnóstica. Mais exames/dia, mesma sala, mais lucro.
-   [Falar no WhatsApp]  [Agendar demonstração]
-   Selo: "Compatível com GE, Siemens, Philips, Canon"
+public.profiles
+  id uuid PK ← auth.users.id (cascade)
+  display_name text
+  created_at timestamptz
 
-2. BARRA DE DORES (3 cards curtos)
-   - Agenda lotada e fila de 30+ dias
-   - Custo por exame em alta, margem caindo
-   - CAPEX de equipamento novo: R$ 3-8 mi
+public.user_roles  (separada — evita escalada de privilégio)
+  id uuid PK
+  user_id uuid → auth.users
+  role app_role enum ('admin','editor')
+  UNIQUE (user_id, role)
 
-3. PROPOSTA DE VALOR EM R$ (calculadora simples ou números fixos)
-   "Clínica média: +6 exames/dia × R$ 450 × 22 dias = +R$ 59.400/mês"
-   3 métricas grandes: -50% tempo, +2x throughput, ROI < 6 meses
+public.blog_categories
+  id uuid PK
+  slug text UNIQUE
+  name text
+  description text
 
-4. COMO FUNCIONA (3 passos — reaproveita seção atual)
-   Imagem ruidosa → Processamento IA → Imagem aprimorada
-
-5. PROVA DE QUALIDADE
-   Slider antes/depois (componente BeforeAfter já existe)
-   Quote de radiologista + logos de fabricantes compatíveis
-
-6. PARA QUEM É (qualifica o lead)
-   ✓ Clínicas com 1+ RM 1.5T ou 3T
-   ✓ Volume > 300 exames/mês
-   ✓ Quer aumentar receita sem CAPEX
-
-7. FAQ (objeções clássicas)
-   - É aprovado pela Anvisa/FDA?
-   - Funciona no meu equipamento?
-   - Quanto custa? (resposta: modelo por exame, sem CAPEX)
-   - Quanto tempo de implantação?
-
-8. CTA FINAL — formulário curto + WhatsApp
-   Campos: Nome, Clínica, WhatsApp, Quantos equipamentos de RM
-   Botão grande: [Quero falar com um especialista]
-   Botão flutuante WhatsApp persistente em toda a página
-
-9. Footer mínimo (sem menu — LP de ads não tem fuga)
+public.blog_posts
+  id uuid PK
+  slug text UNIQUE
+  title text
+  excerpt text         -- ~160 chars, meta description
+  content_md text      -- markdown
+  cover_image_url text
+  category_id uuid → blog_categories
+  author_id uuid → auth.users
+  tags text[]
+  meta_title text       -- opcional, fallback no title
+  meta_description text -- opcional, fallback no excerpt
+  reading_minutes int
+  published boolean default false
+  published_at timestamptz
+  created_at, updated_at timestamptz
 ```
 
-## Conversão / tracking
-- Botão WhatsApp com `wa.me/<numero>` + mensagem pré-preenchida ("Vim do Google, quero saber sobre TurboMR")
-- Form submete via edge function `notify-lead` já existente → e-mail
-- Evento `gtag('event', 'generate_lead')` no submit e no clique do WhatsApp (preparado para Google Ads conversion tag — o usuário cola o ID depois)
-- Sem menu de navegação no topo (só logo) para reduzir fuga — boa prática de LP paga
+**Função `has_role(user_id, role)` SECURITY DEFINER** + trigger `handle_new_user` que cria profile automaticamente.
 
-## SEO / Meta (Helmet por rota)
-- `<title>` "TurboMR — Dobre a capacidade da sua Ressonância | IA Médica"
-- meta description com CTA e número
-- canonical `/lp-ads`, og:image (gerar 1 imagem 1200x630 — pergunto antes)
-- `noindex` opcional se for só para tráfego pago (pergunto)
+**RLS:**
+- `blog_posts`: SELECT público quando `published = true`; INSERT/UPDATE/DELETE só para admin/editor
+- `blog_categories`: SELECT público; mutação só admin
+- `user_roles`: SELECT/INSERT só admin
+- `profiles`: usuário lê/edita o próprio
 
-## Detalhes técnicos
-- Nova rota `/lp-ads` em `src/App.tsx` → `src/pages/LpAds.tsx`
-- Reaproveita: `BeforeAfter`, `Reveal`, `NeuralWave`, tokens do `index.css`
-- Adiciona componente `WhatsAppFAB` (botão flutuante)
-- i18n: PT-BR como default (público-alvo BR), strings em `src/i18n/pt.json` sob chave `lpAds.*`
-- Form: mesma edge function `notify-lead`, adiciona campo `equipmentCount` e `source: "google-ads"`
-- Mantém `/lp` atual intacto (LP institucional existente)
+**Storage bucket** `blog-covers` (público) para imagens de capa.
 
-## Perguntas rápidas antes de codar
-1. **Número do WhatsApp** e **e-mail** que recebem os leads?
-2. **Faixa de preço/modelo comercial** posso citar? (ex.: "por exame", "mensalidade") ou só "fale conosco"?
-3. Quer **calculadora interativa de ROI** ou números fixos bastam?
-4. Já tem **Google Ads Conversion ID** para eu preparar o gtag? (se não, deixo placeholder)
+### Frontend
+- Reaproveita design tokens existentes (navy + cyan)
+- `react-markdown` + `remark-gfm` para renderizar conteúdo
+- `prismjs` ou `rehype-highlight` (opcional) para syntax highlight
+- `react-helmet-async` (instalar) para meta tags por rota
+- JSON-LD Article + BreadcrumbList em cada post
+- Editor admin: Textarea markdown com preview lado-a-lado (sem WYSIWYG complexo para já ir pra produção)
+
+## SEO técnico
+- `<title>`, `<meta description>`, canonical, og:image, og:title/description por post (Helmet)
+- Sitemap dinâmico: substitui `public/sitemap.xml` por gerador `scripts/generate-sitemap.ts` que busca posts publicados via Supabase REST + lista rotas estáticas
+- Schema.org `Article` por post + `BreadcrumbList`
+- Links internos entre artigos relacionados (mesma categoria, manual via tags)
+- `robots.txt` libera `/blog`, mantém `/lp-ads` com noindex
+- Adiciona link "Blog" na nav principal do Index
+
+## Os 10 artigos seed (PT-BR)
+
+Baseados nos 3 PDFs anexados + benchmarks SwiftMR/Subtle/VX. Posts ~800-1500 palavras, com keywords planejadas pra busca BR.
+
+1. **"Como a IA está acelerando a Ressonância Magnética em até 50%"** *(pilar — fonte: Deep Learning-Based Acceleration in MRI)*
+2. **"Deep Learning na reconstrução de imagens de RM: o que mudou em 2025"** *(fonte: Current Status of AI-accelerated MRI)*
+3. **"Evidências científicas das soluções comerciais de IA para RM"** *(fonte: Scientific evidence of commercial AI — overview SwiftMR, Subtle, etc.)*
+4. **"ROI de IA em ressonância: quanto sua clínica pode ganhar"** *(persona gestor)*
+5. **"SwiftMR vs Subtle Medical vs TurboMR: comparativo de softwares de IA para RM"** *(comparativo — keyword competidor)*
+6. **"Como reduzir a fila de espera da Ressonância Magnética sem comprar equipamento novo"** *(persona gestor)*
+7. **"Qualidade diagnóstica com aceleração por IA: o que dizem os radiologistas"** *(persona radiologista)*
+8. **"Integração de softwares de IA ao PACS/DICOM: guia prático"** *(persona técnico)*
+9. **"Anvisa, FDA e marcação CE: regulamentação de IA em radiologia no Brasil"** *(objeção comum)*
+10. **"Conforto do paciente em RM: como exames mais rápidos mudam a experiência"** *(persona radiologista/operação)*
+
+Cada post terá: capa (gerada com imagegen), excerpt SEO, 4-6 H2s, lista de fontes/referências quando aplicável, e CTA final para WhatsApp/`/lp-ads`.
+
+## Autenticação (admin)
+- Email/senha (sem signup público — só admin convidado)
+- Página `/admin/login` simples
+- Hook `useAuth` + `ProtectedRoute` que checa `has_role(auth.uid(), 'admin')`
+- Botão "Sair"
+- Auto-confirm email **ativado** na config (single-user admin, evita fricção)
+- Após migração, instruir o usuário a se cadastrar uma vez e o sistema promove o **primeiro usuário a admin** (via trigger one-shot ou seed inicial — pergunto sobre o email dele abaixo)
+
+## Entregáveis nessa execução
+1. Migração SQL (auth tables + blog tables + RLS + storage bucket + trigger)
+2. `react-helmet-async` instalado e configurado
+3. Componentes: `BlogList`, `BlogPost`, `BlogCard`, `MarkdownRenderer`, `BlogAdminLayout`, `PostEditor`, `ProtectedRoute`, `useAuth`
+4. Páginas: `/blog`, `/blog/:slug`, `/admin/login`, `/admin/blog`, `/admin/blog/novo`, `/admin/blog/editar/:id`
+5. Sitemap dinâmico (gerador) cobrindo posts publicados
+6. 10 posts seed inseridos via migração (markdown completo em cada um)
+7. Link "Blog" adicionado à nav do Index
+8. Robots.txt revisado
+
+## Decisões automáticas (sem perguntar)
+- **PT-BR** como idioma único do blog (público-alvo BR confirmado no briefing anterior)
+- **Email/senha** para admin (sem Google OAuth — overkill para 1-2 admins)
+- **Markdown** no editor (sem WYSIWYG — mais simples, mais robusto)
+- **Imagens de capa** geradas com imagegen padronizadas para cada post (1200x630)
+
+## Perguntas (mínimas)
+1. **Qual o e-mail do admin** que será cadastrado? (vou seedar como admin no banco; senha você define no primeiro login via "esqueci a senha" ou pelo signup que ativo só dessa vez)
+2. **Quer que eu já gere as 10 imagens de capa** (custa ~10 chamadas premium) ou prefere placeholders coloridos por categoria pra economizar?

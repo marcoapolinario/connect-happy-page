@@ -6,7 +6,8 @@
     "casos": "Resultados",
     "planos": "Planes",
     "faq": "FAQ",
-    "menu": "Menú"
+    "menu": "Menú",
+    "blog": "Blog"
   },
   "common": {
     "whatsapp": "WhatsApp"
@@ -333,12 +334,30 @@
     "benefitsTitle": "Resultados que se ven en la caja y en la lista de espera",
     "benefitsSub": "Tecnología comprobada, foco en ingresos y en quien más importa: el paciente.",
     "benefits": [
-      { "title": "+40% de capacidad", "desc": "Más estudios en el mismo turno, con el mismo equipo y el mismo scanner. Crezca sin CAPEX." },
-      { "title": "Ingresos adicionales inmediatos", "desc": "Cada estudio extra es margen directo. ROI típico en pocos meses, con repago claro y medible." },
-      { "title": "Confort del paciente", "desc": "Tiempo dentro del scanner reducido a la mitad. Menos claustrofobia, menos artefactos por movimiento, mejor experiencia." },
-      { "title": "Lista de espera más corta", "desc": "Reduzca el tiempo de espera por una RM y mejore la satisfacción de los médicos solicitantes." },
-      { "title": "Calidad diagnóstica preservada", "desc": "IA dedicada a la reconstrucción: mantiene la fidelidad de la señal y la confianza del informe." },
-      { "title": "Implementación sin dolor", "desc": "Compatible con GE, Siemens y Philips. Se integra a su PACS vía DICOM, sin cambiar el flujo del radiólogo." }
+      {
+        "title": "+40% de capacidad",
+        "desc": "Más estudios en el mismo turno, con el mismo equipo y el mismo scanner. Crezca sin CAPEX."
+      },
+      {
+        "title": "Ingresos adicionales inmediatos",
+        "desc": "Cada estudio extra es margen directo. ROI típico en pocos meses, con repago claro y medible."
+      },
+      {
+        "title": "Confort del paciente",
+        "desc": "Tiempo dentro del scanner reducido a la mitad. Menos claustrofobia, menos artefactos por movimiento, mejor experiencia."
+      },
+      {
+        "title": "Lista de espera más corta",
+        "desc": "Reduzca el tiempo de espera por una RM y mejore la satisfacción de los médicos solicitantes."
+      },
+      {
+        "title": "Calidad diagnóstica preservada",
+        "desc": "IA dedicada a la reconstrucción: mantiene la fidelidad de la señal y la confianza del informe."
+      },
+      {
+        "title": "Implementación sin dolor",
+        "desc": "Compatible con GE, Siemens y Philips. Se integra a su PACS vía DICOM, sin cambiar el flujo del radiólogo."
+      }
     ],
     "finalTitle": "¿Listo para aumentar la productividad de su RM?",
     "finalSub": "Hable con nuestro equipo y descubra en minutos cuánto puede crecer su operación.",
