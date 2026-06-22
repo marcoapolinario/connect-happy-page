@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/turbomr-logo-upload.png";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
+import ogImage from "@/assets/og-lpads.jpg";
 import {
   TrendingUp, DollarSign, Clock, Sparkles, CheckCircle2,
   Loader2, MessageCircle, Calendar, AlertTriangle, Banknote, Hourglass,
@@ -58,23 +59,41 @@ const LpAds = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
+    const pageUrl = "https://connect-happy-page.lovable.app/lp-ads";
+    const ogUrl = new URL(ogImage, window.location.origin).href;
     document.title = "TurboMR — Dobre a capacidade da sua Ressonância | IA Médica";
     const desc = "Aumente em até 2x os exames/dia da sua RM sem trocar o equipamento. IA que reduz 50% do tempo de aquisição. Fale agora no WhatsApp.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
-    // canonical
+
+    const setMeta = (selector: string, attrs: Record<string, string>) => {
+      let el = document.head.querySelector(selector) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement("meta");
+        Object.entries(attrs).forEach(([k, v]) => {
+          if (k !== "content") el!.setAttribute(k, v);
+        });
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", attrs.content);
+    };
+
+    setMeta('meta[name="description"]', { name: "description", content: desc });
+    setMeta('meta[name="robots"]', { name: "robots", content: "noindex, nofollow" });
+    setMeta('meta[property="og:title"]', { property: "og:title", content: "TurboMR — Dobre a capacidade da sua Ressonância" });
+    setMeta('meta[property="og:description"]', { property: "og:description", content: desc });
+    setMeta('meta[property="og:image"]', { property: "og:image", content: ogUrl });
+    setMeta('meta[property="og:url"]', { property: "og:url", content: pageUrl });
+    setMeta('meta[property="og:type"]', { property: "og:type", content: "website" });
+    setMeta('meta[name="twitter:card"]', { name: "twitter:card", content: "summary_large_image" });
+    setMeta('meta[name="twitter:image"]', { name: "twitter:image", content: ogUrl });
+
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!link) {
       link = document.createElement("link");
       link.rel = "canonical";
       document.head.appendChild(link);
     }
-    link.href = "https://connect-happy-page.lovable.app/lp-ads";
+    link.href = pageUrl;
+
     window.scrollTo(0, 0);
   }, []);
 
