@@ -9,6 +9,7 @@ import CookieConsent from "./components/CookieConsent";
 
 // Code-split secondary routes — keep landing (Index) in main chunk
 const Lp = lazy(() => import("./pages/Lp.tsx"));
+const LpAds = lazy(() => import("./pages/LpAds.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient({
@@ -39,6 +40,14 @@ const App = () => (
             element={
               <Suspense fallback={<RouteFallback />}>
                 <Lp />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/lp-ads"
+            element={
+              <Suspense fallback={<RouteFallback />}>
+                <LpAds />
               </Suspense>
             }
           />
