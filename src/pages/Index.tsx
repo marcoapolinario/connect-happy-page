@@ -59,6 +59,7 @@ const navLinks = [
   { href: "#tecnologia", key: "nav.comoFunciona" },
   { href: "#beneficios", key: "nav.beneficios" },
   { href: "#casos", key: "nav.resultados" },
+  { href: "/blog", key: "nav.blog" },
   { href: "#contato", key: "nav.contato" },
 ];
 

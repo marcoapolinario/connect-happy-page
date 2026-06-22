@@ -11,7 +11,8 @@
     "casos": "Resultados",
     "planos": "Planos",
     "faq": "FAQ",
-    "menu": "Menu"
+    "menu": "Menu",
+    "blog": "Blog"
   },
   "common": {
     "whatsapp": "WhatsApp"
@@ -118,11 +119,35 @@
     "title": "Como funciona",
     "subtitle": "Nosso pipeline de IA transforma imagens ruidosas em diagnósticos mais confiáveis e precisos.",
     "pipeline": [
-      { "step": "1", "title": "Protocolo otimizado", "desc": "Ajustamos o protocolo da RM para máxima eficiência.", "imgTag": "IMAGEM ORIGINAL", "cardTag": "RM OTIMIZADA", "cardDesc": "Protocolo mais rápido gera mais ruído na imagem." },
-      { "step": "2", "title": "IA TurboMR", "desc": "A imagem ruidosa é enviada para nossa inteligência artificial.", "imgTag": "PROCESSAMENTO IA", "cardTag": "IA TURBOMR", "cardDesc": "Nossa IA avançada remove o ruído e preserva os detalhes clínicos." },
-      { "step": "3", "title": "Imagem aprimorada", "desc": "A IA remove o ruído e devolve uma imagem nítida e precisa.", "imgTag": "IMAGEM APRIMORADA", "cardTag": "IMAGEM FINAL", "cardDesc": "Retornamos uma imagem nítida, pronta para diagnóstico." }
+      {
+        "step": "1",
+        "title": "Protocolo otimizado",
+        "desc": "Ajustamos o protocolo da RM para máxima eficiência.",
+        "imgTag": "IMAGEM ORIGINAL",
+        "cardTag": "RM OTIMIZADA",
+        "cardDesc": "Protocolo mais rápido gera mais ruído na imagem."
+      },
+      {
+        "step": "2",
+        "title": "IA TurboMR",
+        "desc": "A imagem ruidosa é enviada para nossa inteligência artificial.",
+        "imgTag": "PROCESSAMENTO IA",
+        "cardTag": "IA TURBOMR",
+        "cardDesc": "Nossa IA avançada remove o ruído e preserva os detalhes clínicos."
+      },
+      {
+        "step": "3",
+        "title": "Imagem aprimorada",
+        "desc": "A IA remove o ruído e devolve uma imagem nítida e precisa.",
+        "imgTag": "IMAGEM APRIMORADA",
+        "cardTag": "IMAGEM FINAL",
+        "cardDesc": "Retornamos uma imagem nítida, pronta para diagnóstico."
+      }
     ],
-    "footer": { "title": "Sem dados armazenados", "desc": "Segurança e privacidade garantidas." }
+    "footer": {
+      "title": "Sem dados armazenados",
+      "desc": "Segurança e privacidade garantidas."
+    }
   },
   "compliance": {
     "kicker": "Você pode confiar",
@@ -149,16 +174,40 @@
     "subtitle": "Fluxo contínuo, seguro e automatizado: da aquisição ao diagnóstico em minutos.",
     "stage": "ETAPA",
     "steps": [
-      { "title": "Aquisição", "desc": "RM GE / Siemens / Philips com protocolo otimizado" },
-      { "title": "Envio", "desc": "Rede local via DICOM C-STORE" },
-      { "title": "TurboMR IA", "desc": "Servidor on-premise: denoise + super-res + nitidez" },
-      { "title": "Retorno", "desc": "Integração automática com PACS / Workstation" },
-      { "title": "Laudo", "desc": "Radiologista lauda com qualidade superior" }
+      {
+        "title": "Aquisição",
+        "desc": "RM GE / Siemens / Philips com protocolo otimizado"
+      },
+      {
+        "title": "Envio",
+        "desc": "Rede local via DICOM C-STORE"
+      },
+      {
+        "title": "TurboMR IA",
+        "desc": "Servidor on-premise: denoise + super-res + nitidez"
+      },
+      {
+        "title": "Retorno",
+        "desc": "Integração automática com PACS / Workstation"
+      },
+      {
+        "title": "Laudo",
+        "desc": "Radiologista lauda com qualidade superior"
+      }
     ],
     "boxes": [
-      { "t": "Privacidade Total", "d": "Dados processados localmente. Nenhuma imagem sai da rede do hospital (LGPD)." },
-      { "t": "Metadados Preservados", "d": "Mantém todas as tags DICOM originais para compatibilidade total com o PACS." },
-      { "t": "Alta Disponibilidade", "d": "Sistema 24/7 com fila resiliente e monitoramento contínuo." }
+      {
+        "t": "Privacidade Total",
+        "d": "Dados processados localmente. Nenhuma imagem sai da rede do hospital (LGPD)."
+      },
+      {
+        "t": "Metadados Preservados",
+        "d": "Mantém todas as tags DICOM originais para compatibilidade total com o PACS."
+      },
+      {
+        "t": "Alta Disponibilidade",
+        "d": "Sistema 24/7 com fila resiliente e monitoramento contínuo."
+      }
     ]
   },
   "compare": {
@@ -167,9 +216,21 @@
     "titleHighlight": "Depois",
     "subtitle": "Três ganhos que aparecem em cada exame processado pelo TurboMR. Arraste o controle de cada imagem para comparar.",
     "items": [
-      { "title": "Ruído reduzido", "desc": "Advanced Denoise elimina o ruído da aquisição acelerada sem apagar detalhes anatômicos.", "alt": "Comparativo de ruído em RM cervical" },
-      { "title": "Resolução recuperada", "desc": "Super-resolução reconstrói matriz e bordas finas, revelando estruturas sutis.", "alt": "Comparativo de resolução em RM de joelho" },
-      { "title": "Diagnóstico mais claro", "desc": "Imagem final com nitidez e contraste superiores, pronta para laudo no PACS.", "alt": "Comparativo de nitidez em RM lombar" }
+      {
+        "title": "Ruído reduzido",
+        "desc": "Advanced Denoise elimina o ruído da aquisição acelerada sem apagar detalhes anatômicos.",
+        "alt": "Comparativo de ruído em RM cervical"
+      },
+      {
+        "title": "Resolução recuperada",
+        "desc": "Super-resolução reconstrói matriz e bordas finas, revelando estruturas sutis.",
+        "alt": "Comparativo de resolução em RM de joelho"
+      },
+      {
+        "title": "Diagnóstico mais claro",
+        "desc": "Imagem final com nitidez e contraste superiores, pronta para laudo no PACS.",
+        "alt": "Comparativo de nitidez em RM lombar"
+      }
     ],
     "beforeLabel": "Rotina",
     "afterLabel": "TurboMR",
@@ -217,11 +278,21 @@
     "recommended": "RECOMENDADO",
     "annualTitle": "Licença Anual",
     "annualSub": "Ilimitada por equipamento",
-    "annualFeatures": ["Processamento ilimitado 24/7", "Suporte técnico dedicado", "Atualizações inclusas", "Treinamento da equipe"],
+    "annualFeatures": [
+      "Processamento ilimitado 24/7",
+      "Suporte técnico dedicado",
+      "Atualizações inclusas",
+      "Treinamento da equipe"
+    ],
     "annualCta": "Consultar valores",
     "ppuTitle": "Pay-per-Use",
     "ppuSub": "Por exame processado",
-    "ppuFeatures": ["Sem investimento inicial", "Escalável conforme demanda", "Faturamento mensal", "Mesma qualidade técnica"],
+    "ppuFeatures": [
+      "Sem investimento inicial",
+      "Escalável conforme demanda",
+      "Faturamento mensal",
+      "Mesma qualidade técnica"
+    ],
     "ppuCta": "Saber mais",
     "trialTitle": "🎁 Período de teste gratuito — 15 dias",
     "trialSub": "Validamos em sua estrutura, sem compromisso."
@@ -230,12 +301,30 @@
     "kicker": "Esclarecendo dúvidas",
     "title": "Perguntas frequentes",
     "items": [
-      { "q": "Como funciona a integração com meu PACS?", "a": "O TurboMR recebe imagens via DICOM C-STORE e devolve as séries processadas automaticamente para o PACS. Sem mudanças no fluxo do radiologista." },
-      { "q": "Preciso trocar meu equipamento de Ressonância?", "a": "Não. O TurboMR é compatível com equipamentos GE, Siemens e Philips. Trabalhamos sobre a aquisição existente, sem nenhum hardware adicional na sala de exame." },
-      { "q": "A IA cria artefatos ou inventa estruturas?", "a": "Não. Nosso pipeline preserva o sinal original e apenas remove ruído e recupera resolução. Sem 'alucinações' — 100% compatível DICOM." },
-      { "q": "Os dados saem do hospital?", "a": "Não. Todo o processamento é local (on-premise). Nenhuma imagem trafega pela internet. Totalmente compatível com a LGPD." },
-      { "q": "A qualidade diagnóstica fica comprometida?", "a": "Pelo contrário. A IA aumenta SNR e nitidez, permitindo visualizar detalhes anatômicos sutis com mais clareza, mesmo em aquisições aceleradas." },
-      { "q": "O radiologista precisa de treinamento?", "a": "Não. As imagens chegam ao PACS como séries padrão, prontas para laudo. O fluxo de leitura permanece idêntico." }
+      {
+        "q": "Como funciona a integração com meu PACS?",
+        "a": "O TurboMR recebe imagens via DICOM C-STORE e devolve as séries processadas automaticamente para o PACS. Sem mudanças no fluxo do radiologista."
+      },
+      {
+        "q": "Preciso trocar meu equipamento de Ressonância?",
+        "a": "Não. O TurboMR é compatível com equipamentos GE, Siemens e Philips. Trabalhamos sobre a aquisição existente, sem nenhum hardware adicional na sala de exame."
+      },
+      {
+        "q": "A IA cria artefatos ou inventa estruturas?",
+        "a": "Não. Nosso pipeline preserva o sinal original e apenas remove ruído e recupera resolução. Sem 'alucinações' — 100% compatível DICOM."
+      },
+      {
+        "q": "Os dados saem do hospital?",
+        "a": "Não. Todo o processamento é local (on-premise). Nenhuma imagem trafega pela internet. Totalmente compatível com a LGPD."
+      },
+      {
+        "q": "A qualidade diagnóstica fica comprometida?",
+        "a": "Pelo contrário. A IA aumenta SNR e nitidez, permitindo visualizar detalhes anatômicos sutis com mais clareza, mesmo em aquisições aceleradas."
+      },
+      {
+        "q": "O radiologista precisa de treinamento?",
+        "a": "Não. As imagens chegam ao PACS como séries padrão, prontas para laudo. O fluxo de leitura permanece idêntico."
+      }
     ]
   },
   "cta": {
@@ -285,12 +374,30 @@
     "benefitsTitle": "Resultados que aparecem no caixa e na fila de espera",
     "benefitsSub": "Tecnologia comprovada, foco em receita e em quem mais importa: o paciente.",
     "benefits": [
-      { "title": "+40% de capacidade", "desc": "Mais exames realizados no mesmo turno, com a mesma equipe e o mesmo scanner. Cresça sem CAPEX." },
-      { "title": "Receita adicional imediata", "desc": "Cada exame extra é margem direta. ROI típico em poucos meses, com payback claro e mensurável." },
-      { "title": "Conforto do paciente", "desc": "Tempo dentro do scanner reduzido pela metade. Menos claustrofobia, menos artefatos por movimento, melhor experiência." },
-      { "title": "Fila de espera menor", "desc": "Reduza o tempo de espera por uma RM e melhore a satisfação dos médicos solicitantes." },
-      { "title": "Qualidade diagnóstica preservada", "desc": "IA dedicada à reconstrução: mantém a fidelidade do sinal e a confiança do laudo." },
-      { "title": "Implantação sem dor", "desc": "Compatível com GE, Siemens e Philips. Integra ao seu PACS via DICOM, sem mudar o fluxo do radiologista." }
+      {
+        "title": "+40% de capacidade",
+        "desc": "Mais exames realizados no mesmo turno, com a mesma equipe e o mesmo scanner. Cresça sem CAPEX."
+      },
+      {
+        "title": "Receita adicional imediata",
+        "desc": "Cada exame extra é margem direta. ROI típico em poucos meses, com payback claro e mensurável."
+      },
+      {
+        "title": "Conforto do paciente",
+        "desc": "Tempo dentro do scanner reduzido pela metade. Menos claustrofobia, menos artefatos por movimento, melhor experiência."
+      },
+      {
+        "title": "Fila de espera menor",
+        "desc": "Reduza o tempo de espera por uma RM e melhore a satisfação dos médicos solicitantes."
+      },
+      {
+        "title": "Qualidade diagnóstica preservada",
+        "desc": "IA dedicada à reconstrução: mantém a fidelidade do sinal e a confiança do laudo."
+      },
+      {
+        "title": "Implantação sem dor",
+        "desc": "Compatível com GE, Siemens e Philips. Integra ao seu PACS via DICOM, sem mudar o fluxo do radiologista."
+      }
     ],
     "finalTitle": "Pronto para aumentar a produtividade da sua RM?",
     "finalSub": "Fale com nosso time e entenda em poucos minutos quanto sua operação pode crescer.",
