@@ -187,6 +187,48 @@ export type Database = {
         }
         Relationships: []
       }
+      page_seo: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          keywords: string[]
+          noindex: boolean
+          og_image: string | null
+          path: string
+          schema_json: Json | null
+          title: string | null
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          keywords?: string[]
+          noindex?: boolean
+          og_image?: string | null
+          path: string
+          schema_json?: Json | null
+          title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          keywords?: string[]
+          noindex?: boolean
+          og_image?: string | null
+          path?: string
+          schema_json?: Json | null
+          title?: string | null
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
