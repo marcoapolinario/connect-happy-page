@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -107,6 +108,12 @@ const Lp = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="TurboMR — Aumente a lucratividade da sua RM com IA"
+        description="Descubra como aumentar em até 40% a capacidade de exames da sua Ressonância Magnética com IA da TurboMR. Fale com nosso time comercial."
+        path="/lp"
+        keywords={["ROI IA MRI","aumentar capacidade RM","software radiologia","TurboMR"]}
+      />
       {/* HEADER simplificado */}
       <header className="border-b border-border bg-background sticky top-0 z-40 backdrop-blur-xl bg-background/90">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">

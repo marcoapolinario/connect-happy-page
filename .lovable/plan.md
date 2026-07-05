@@ -1,135 +1,106 @@
 
-# Blog SEO + Área Administrativa — TurboMR
+# TurboMR — SEO Avançado, GTM e Estrutura de Marketing
 
-## Objetivo
-Construir um blog otimizado para SEO orgânico em PT-BR, com **10 artigos seed** sobre IA aplicada a Ressonância Magnética, baseados nos 3 PDFs anexados e em conteúdos de referência (SwiftMR/AIRS, Subtle Medical, VX Medical). Inclui **área admin** protegida para o usuário criar/editar/publicar novos posts depois.
+Escopo enorme. Vou entregar em **3 ondas incrementais**. Cada onda é independente e utilizável. Detalho a Onda 1 com precisão; Ondas 2 e 3 ficam em alto nível pra você validar antes.
 
-## Personas-alvo do blog
-- **Gestor/dono de clínica** (decisor financeiro): busca "como aumentar produtividade da RM", "ROI ressonância", "reduzir custo por exame"
-- **Radiologista chefe / físico médico** (decisor técnico): busca "deep learning MRI reconstruction", "redução de tempo de aquisição com IA", "qualidade diagnóstica IA RM"
+Assumo que **este** é o projeto TurboMR (não confundir com o pedido anterior de gestão financeira, que fica separado).
 
-## Estrutura do blog
+---
 
-### Rotas (público)
-- `/blog` — listagem de posts (paginada, filtro por categoria, busca)
-- `/blog/:slug` — post individual com SEO completo + JSON-LD Article + breadcrumbs
-- `/blog/categoria/:slug` — listagem por categoria
+## Premissas e recortes honestos
 
-### Rotas (admin protegidas)
-- `/admin/login` — login (Lovable Cloud auth com email/senha)
-- `/admin/blog` — listagem com filtros (rascunho/publicado), busca
-- `/admin/blog/novo` — criar post
-- `/admin/blog/editar/:id` — editar
-- Botão "publicar/despublicar", upload de imagem de capa
+- **Lighthouse ≥90 em tudo**: perseguível, não garantível 100% do tempo — depende de fontes/imagens do usuário e do runtime do Lovable. Vou otimizar até o teto viável e reportar o resultado real.
+- **SPA (Vite + React)**: crawlers modernos (Google, Bing) executam JS e leem `react-helmet-async` sem problema. Preview no LinkedIn/Slack/Facebook lê só o `index.html` estático — não há como ter OG dinâmico por rota sem SSR. Vou deixar OG sitewide sólido no `index.html` e OG por rota via Helmet pro Google.
+- **reCAPTCHA / rate limit / headers de segurança**: reCAPTCHA v3 exige chave do usuário (peço quando chegarmos lá). Headers HTTP e rate-limit real são do hosting Lovable — o que posso fazer no app é honeypot + validação Zod + throttle client-side + edge function com verificação. Vou entregar isso e ser claro sobre o que fica no hosting.
+- **Auto-SEO "IA sugere keywords"**: cabe, mas só faz sentido depois que o admin do blog tiver mais tração. Fica na Onda 3.
+- **Dashboard "visitantes / origem / tempo médio"**: esses dados vivem no GA4, não no banco. O dashboard interno vai focar no que temos em primeira mão — **leads, conversões, cliques em WhatsApp/e-mail, UTMs, funil** — e linkar pro GA4 pra métricas de audiência. Duplicar GA4 no banco é caro e impreciso.
 
-## Stack técnica
+---
 
-### Backend (Lovable Cloud / Supabase)
-**Migração — tabelas e RLS:**
+## Onda 1 — SEO técnico + GTM + Consent Mode + Lead enrichment (este ciclo)
 
-```text
-public.profiles
-  id uuid PK ← auth.users.id (cascade)
-  display_name text
-  created_at timestamptz
+### 1.1 SEO técnico
+- **Helmet por rota** já existe no Blog/BlogPost. Vou estender pra `Index`, `Lp`, `LpAds`, `Blog` (lista), `NotFound`:
+  - `<title>` único (≤60 chars) + `<meta description>` (≤160) por rota, em PT/EN/ES quando aplicável.
+  - `<link rel="canonical">` self-referente por rota.
+  - `og:title/description/url/type/image` e `twitter:card` por rota.
+  - **JSON-LD**: `Organization` + `WebSite` sitewide no `index.html`; `SoftwareApplication` (produto TurboMR) na home; `Article` + `BreadcrumbList` no post; `FAQPage` onde houver FAQ; `BreadcrumbList` no `/blog`.
+- **Heading audit**: garantir 1 `<h1>` por página, hierarquia H2/H3 correta em Index/Lp/LpAds/Blog.
+- **Alt text**: varrer todos os `<img>` do projeto e preencher alt semântico (não "auto por IA" — texto real por contexto).
+- **Imagens**: componente `<Img>` com `loading="lazy"`, `decoding="async"`, `width/height` para evitar CLS. Onde o arquivo original for grande, converto pra WebP no build via `sharp` (script `prebuild`).
+- **Fontes**: preload já existe pro Space Grotesk/Inter; adicionar `font-display: swap` e verificar preconnect.
+- **Sitemap**: o gerador já existe (`scripts/generate-sitemap.ts`). Vou estender pra incluir `/lp-ads` e checar `lastmod` de posts. `robots.txt` já está adequado — só ajusto se necessário.
+- **URLs amigáveis + 301**: rotas atuais já são limpas. Não vou inventar redirects sem pedido explícito.
 
-public.user_roles  (separada — evita escalada de privilégio)
-  id uuid PK
-  user_id uuid → auth.users
-  role app_role enum ('admin','editor')
-  UNIQUE (user_id, role)
+### 1.2 GTM + Data Layer + GA4 + Clarity
+GTM (`GTM-MFS82RMD`) já está no `index.html`. Vou:
+- Criar `src/lib/analytics.ts` com API única: `track(event, params)`, `identify(traits)`, `pageview(path)`.
+- Push tipado no `window.dataLayer` — events padronizados:
+  - `page_view`, `scroll_depth` (25/50/75/100), `cta_click`, `whatsapp_click`, `email_click`, `phone_click`, `form_start`, `form_submit`, `lead_conversion`, `demo_request`, `poc_request`, `video_play`, `video_complete`, `download`, `section_view`, `outbound_click`, `time_on_page`.
+- Hook `useScrollTracking()` no layout raiz.
+- `pageview` disparado em cada mudança de rota via listener do `react-router`.
+- **GA4**: continua sendo carregado pelo tag `gtag.js` que já existe **ou** movo pro GTM (recomendado — evita duplicidade). Vou consolidar via GTM e remover o `gtag.js` inline pra não medir duas vezes. Você configura os eventos-conversão dentro do GA4 (te entrego a lista pronta pra colar).
+- **Clarity**: carregado condicionalmente após consentimento analítico (script injetado). Precisa do **Project ID do Clarity** — te peço na aprovação.
 
-public.blog_categories
-  id uuid PK
-  slug text UNIQUE
-  name text
-  description text
+### 1.3 Consent Mode v2 + LGPD
+Refatorar o `CookieConsent` atual (hoje é binário aceitar/recusar) para:
+- Banner + modal "Preferências" com 3 categorias: **necessários** (sempre on), **analíticos**, **marketing**.
+- Persistir escolha em `localStorage` + cookie primário `tmr_consent` (1 ano).
+- Disparar `gtag('consent', 'update', {...})` com `ad_storage`, `analytics_storage`, `ad_user_data`, `ad_personalization` — Consent Mode v2 completo.
+- Estado default `denied` antes de decisão (via `gtag('consent','default',...)` inline no `index.html`, **antes** do GTM).
+- Emitir evento `consent_update` no dataLayer.
+- Copy em PT/EN/ES via i18n existente.
 
-public.blog_posts
-  id uuid PK
-  slug text UNIQUE
-  title text
-  excerpt text         -- ~160 chars, meta description
-  content_md text      -- markdown
-  cover_image_url text
-  category_id uuid → blog_categories
-  author_id uuid → auth.users
-  tags text[]
-  meta_title text       -- opcional, fallback no title
-  meta_description text -- opcional, fallback no excerpt
-  reading_minutes int
-  published boolean default false
-  published_at timestamptz
-  created_at, updated_at timestamptz
-```
+### 1.4 Enriquecimento e captura de leads
+Tabela `leads` já existe. Vou:
+- Adicionar colunas: `phone`, `city`, `state`, `country`, `interest`, `page_url`, `referrer`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `gclid`, `fbclid`, `device`, `browser`, `user_agent`. Migração com defaults nullable pra não quebrar dados atuais.
+- `src/lib/attribution.ts`: captura UTMs/GCLID/FBCLID na primeira visita, salva em `sessionStorage` + cookie primário de 90 dias, injeta em todo formulário e clique de WhatsApp.
+- Botão WhatsApp (FAB e CTAs): mensagem contextual pela rota + parâmetros UTM na string; evento `whatsapp_click` no GTM antes da navegação.
+- Edge function `notify-lead` já existe — estendo pra receber os novos campos, validar com Zod (limites e sanitização) e logar. Envio de e-mail via Resend fica pronto pra ligar assim que o domínio de envio for verificado (já é config existente).
+- **Anti-spam**: campo honeypot invisível + throttle 1 submissão/30s por sessão + validação Zod estrita. reCAPTCHA v3 fica pra Onda 2 (precisa das chaves).
 
-**Função `has_role(user_id, role)` SECURITY DEFINER** + trigger `handle_new_user` que cria profile automaticamente.
+---
 
-**RLS:**
-- `blog_posts`: SELECT público quando `published = true`; INSERT/UPDATE/DELETE só para admin/editor
-- `blog_categories`: SELECT público; mutação só admin
-- `user_roles`: SELECT/INSERT só admin
-- `profiles`: usuário lê/edita o próprio
+## Onda 2 — Landing pages reutilizáveis + Dashboard interno + reCAPTCHA
 
-**Storage bucket** `blog-covers` (público) para imagens de capa.
+- Componente `<LandingPageTemplate>` com slots: hero, benefícios, CTA, formulário, FAQ (`FAQPage` schema), depoimentos, cases, WhatsApp. Nova LP = 1 arquivo de config + rota.
+- `/admin/dashboard`: cards de leads (dia/semana/mês), origem (breakdown UTM), taxa de conversão por página, top páginas de origem, cliques em WhatsApp/e-mail (do dataLayer refletido via evento no backend opcional), funil visão simples. Link "Ver audiência completa no GA4".
+- `/admin/leads`: lista, filtros por UTM/período, export CSV.
+- reCAPTCHA v3 nos formulários (peço `RECAPTCHA_SITE_KEY` + `RECAPTCHA_SECRET`).
 
-### Frontend
-- Reaproveita design tokens existentes (navy + cyan)
-- `react-markdown` + `remark-gfm` para renderizar conteúdo
-- `prismjs` ou `rehype-highlight` (opcional) para syntax highlight
-- `react-helmet-async` (instalar) para meta tags por rota
-- JSON-LD Article + BreadcrumbList em cada post
-- Editor admin: Textarea markdown com preview lado-a-lado (sem WYSIWYG complexo para já ir pra produção)
+## Onda 3 — Auto-SEO, integrações CRM e otimizações finas
 
-## SEO técnico
-- `<title>`, `<meta description>`, canonical, og:image, og:title/description por post (Helmet)
-- Sitemap dinâmico: substitui `public/sitemap.xml` por gerador `scripts/generate-sitemap.ts` que busca posts publicados via Supabase REST + lista rotas estáticas
-- Schema.org `Article` por post + `BreadcrumbList`
-- Links internos entre artigos relacionados (mesma categoria, manual via tags)
-- `robots.txt` libera `/blog`, mantém `/lp-ads` com noindex
-- Adiciona link "Blog" na nav principal do Index
+- **Admin SEO por rota**: tabela `page_seo` (path, title, description, og_image, keywords, schema_json) editável no admin, aplicada via hook em cada rota. Fallback pros defaults hardcoded.
+- **Sugestão de keywords por IA**: edge function usando Lovable AI Gateway analisa o conteúdo da página e sugere title/description/keywords baseado nas queries alvo (a lista longa que você passou).
+- Conversão de imagens do projeto pra WebP no `prebuild`.
+- Conectores prontos: RD Station, HubSpot (edge function `sync-lead` que dispara sob feature flag).
+- Meta Pixel e LinkedIn Insight Tag disparados via GTM sob consentimento de marketing.
 
-## Os 10 artigos seed (PT-BR)
+---
 
-Baseados nos 3 PDFs anexados + benchmarks SwiftMR/Subtle/VX. Posts ~800-1500 palavras, com keywords planejadas pra busca BR.
+## O que vou tocar na Onda 1 (arquivos)
 
-1. **"Como a IA está acelerando a Ressonância Magnética em até 50%"** *(pilar — fonte: Deep Learning-Based Acceleration in MRI)*
-2. **"Deep Learning na reconstrução de imagens de RM: o que mudou em 2025"** *(fonte: Current Status of AI-accelerated MRI)*
-3. **"Evidências científicas das soluções comerciais de IA para RM"** *(fonte: Scientific evidence of commercial AI — overview SwiftMR, Subtle, etc.)*
-4. **"ROI de IA em ressonância: quanto sua clínica pode ganhar"** *(persona gestor)*
-5. **"SwiftMR vs Subtle Medical vs TurboMR: comparativo de softwares de IA para RM"** *(comparativo — keyword competidor)*
-6. **"Como reduzir a fila de espera da Ressonância Magnética sem comprar equipamento novo"** *(persona gestor)*
-7. **"Qualidade diagnóstica com aceleração por IA: o que dizem os radiologistas"** *(persona radiologista)*
-8. **"Integração de softwares de IA ao PACS/DICOM: guia prático"** *(persona técnico)*
-9. **"Anvisa, FDA e marcação CE: regulamentação de IA em radiologia no Brasil"** *(objeção comum)*
-10. **"Conforto do paciente em RM: como exames mais rápidos mudam a experiência"** *(persona radiologista/operação)*
+- `index.html` — Consent Mode default `denied`, JSON-LD Organization+WebSite, remoção do gtag duplicado, meta tags base.
+- `src/lib/analytics.ts` **(novo)** — API única de tracking.
+- `src/lib/attribution.ts` **(novo)** — captura/persistência de UTMs, GCLID, FBCLID.
+- `src/lib/consent.ts` **(novo)** — estado de consentimento + Consent Mode v2.
+- `src/components/CookieConsent.tsx` — refactor pra 3 categorias + modal.
+- `src/components/SEO.tsx` **(novo)** — wrapper Helmet reutilizável (title/desc/canonical/OG/JSON-LD).
+- `src/components/WhatsAppFAB.tsx` — injeta UTMs e dispara evento antes de abrir.
+- `src/pages/Index.tsx`, `Lp.tsx`, `LpAds.tsx`, `Blog.tsx`, `BlogPost.tsx`, `NotFound.tsx` — SEO por rota + tracking de scroll/CTA/section_view.
+- `supabase/functions/notify-lead/index.ts` — aceitar campos de atribuição, sanitizar, honeypot check.
+- **Migração** — adicionar colunas de atribuição à tabela `leads`.
+- `scripts/generate-sitemap.ts` — incluir `/lp-ads`.
 
-Cada post terá: capa (gerada com imagegen), excerpt SEO, 4-6 H2s, lista de fontes/referências quando aplicável, e CTA final para WhatsApp/`/lp-ads`.
+Nenhum arquivo é reescrito sem necessidade; uso edits pontuais.
 
-## Autenticação (admin)
-- Email/senha (sem signup público — só admin convidado)
-- Página `/admin/login` simples
-- Hook `useAuth` + `ProtectedRoute` que checa `has_role(auth.uid(), 'admin')`
-- Botão "Sair"
-- Auto-confirm email **ativado** na config (single-user admin, evita fricção)
-- Após migração, instruir o usuário a se cadastrar uma vez e o sistema promove o **primeiro usuário a admin** (via trigger one-shot ou seed inicial — pergunto sobre o email dele abaixo)
+---
 
-## Entregáveis nessa execução
-1. Migração SQL (auth tables + blog tables + RLS + storage bucket + trigger)
-2. `react-helmet-async` instalado e configurado
-3. Componentes: `BlogList`, `BlogPost`, `BlogCard`, `MarkdownRenderer`, `BlogAdminLayout`, `PostEditor`, `ProtectedRoute`, `useAuth`
-4. Páginas: `/blog`, `/blog/:slug`, `/admin/login`, `/admin/blog`, `/admin/blog/novo`, `/admin/blog/editar/:id`
-5. Sitemap dinâmico (gerador) cobrindo posts publicados
-6. 10 posts seed inseridos via migração (markdown completo em cada um)
-7. Link "Blog" adicionado à nav do Index
-8. Robots.txt revisado
+## Perguntas pra fechar a Onda 1
 
-## Decisões automáticas (sem perguntar)
-- **PT-BR** como idioma único do blog (público-alvo BR confirmado no briefing anterior)
-- **Email/senha** para admin (sem Google OAuth — overkill para 1-2 admins)
-- **Markdown** no editor (sem WYSIWYG — mais simples, mais robusto)
-- **Imagens de capa** geradas com imagegen padronizadas para cada post (1200x630)
+1. **Clarity Project ID** — qual é? (sem ele não instalo)
+2. **GA4 via GTM**: confirma que posso **remover o `gtag.js` inline** do `index.html` e centralizar no GTM? (evita medição dupla — recomendo sim)
+3. **E-mail comercial** que deve receber notificação de lead? (hoje só logamos; posso ligar Resend agora se o domínio já estiver verificado — se não, deixo o hook pronto)
+4. **WhatsApp**: mantemos o número atual `551153043453`?
 
-## Perguntas (mínimas)
-1. **Qual o e-mail do admin** que será cadastrado? (vou seedar como admin no banco; senha você define no primeiro login via "esqueci a senha" ou pelo signup que ativo só dessa vez)
-2. **Quer que eu já gere as 10 imagens de capa** (custa ~10 chamadas premium) ou prefere placeholders coloridos por categoria pra economizar?
+Respondendo (ou dizendo "toca ficha com defaults sensatos"), parto pra implementação da Onda 1.

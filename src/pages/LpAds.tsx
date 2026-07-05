@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SEO } from "@/components/SEO";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -183,6 +184,13 @@ const LpAds = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="TurboMR — Dobre a capacidade da sua Ressonância Magnética"
+        description="Solução de IA que reduz o tempo de exame de RM em até 50%. Sem trocar equipamentos. Fale agora no WhatsApp."
+        path="/lp-ads"
+        noindex
+        keywords={["TurboMR","IA MRI","aceleração ressonância"]}
+      />
       {/* HEADER mínimo — sem menu pra reduzir fuga */}
       <header className="border-b border-border bg-background/90 backdrop-blur-xl sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">

@@ -8,6 +8,12 @@ import Index from "./pages/Index.tsx";
 import CookieConsent from "./components/CookieConsent";
 import { AuthProvider } from "./hooks/useAuth";
 import { ProtectedRoute } from "./components/admin/ProtectedRoute";
+import { useRouteAnalytics } from "./hooks/useRouteAnalytics";
+
+const AnalyticsBridge = () => {
+  useRouteAnalytics();
+  return null;
+};
 
 // Code-split secondary routes
 const Lp = lazy(() => import("./pages/Lp.tsx"));
@@ -45,6 +51,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
+          <AnalyticsBridge />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/lp" element={wrap(<Lp />)} />

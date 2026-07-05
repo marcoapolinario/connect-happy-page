@@ -105,34 +105,85 @@ export type Database = {
       }
       leads: {
         Row: {
+          browser: string | null
+          city: string | null
           company: string
+          country: string | null
           created_at: string
+          device: string | null
           email: string
+          fbclid: string | null
+          gclid: string | null
           id: string
+          interest: string | null
           locale: string | null
           message: string | null
           name: string
+          page_url: string | null
+          phone: string | null
+          referrer: string | null
           role: string
+          state: string | null
+          user_agent: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
         }
         Insert: {
+          browser?: string | null
+          city?: string | null
           company: string
+          country?: string | null
           created_at?: string
+          device?: string | null
           email: string
+          fbclid?: string | null
+          gclid?: string | null
           id?: string
+          interest?: string | null
           locale?: string | null
           message?: string | null
           name: string
+          page_url?: string | null
+          phone?: string | null
+          referrer?: string | null
           role: string
+          state?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
         }
         Update: {
+          browser?: string | null
+          city?: string | null
           company?: string
+          country?: string | null
           created_at?: string
+          device?: string | null
           email?: string
+          fbclid?: string | null
+          gclid?: string | null
           id?: string
+          interest?: string | null
           locale?: string | null
           message?: string | null
           name?: string
+          page_url?: string | null
+          phone?: string | null
+          referrer?: string | null
           role?: string
+          state?: string | null
+          user_agent?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
         }
         Relationships: []
       }

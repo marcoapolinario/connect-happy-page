@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/Reveal";
@@ -100,6 +101,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <SEO
+        title="TurboMR — RM 50% mais rápida com IA | Radiologia de Alta Performance"
+        description="TurboMR acelera exames de Ressonância Magnética em até 50% com IA, mantendo qualidade diagnóstica superior. Sem trocar equipamentos. Teste 15 dias grátis."
+        path="/"
+        keywords={[
+          "IA para ressonância magnética","MRI AI","aceleração de RM","deep learning MRI",
+          "denoising MRI","software para radiologia","PACS","RIS","diagnóstico por imagem",
+          "radiologia digital","TurboMR","exames de ressonância mais rápidos",
+        ]}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "TurboMR",
+          applicationCategory: "MedicalApplication",
+          operatingSystem: "Web / PACS integration",
+          description: "Software de IA que acelera exames de Ressonância Magnética em até 50%, mantendo ou melhorando a qualidade diagnóstica.",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "BRL", description: "Teste 15 dias grátis" },
+        }}
+      />
       {/* NAV */}
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/60">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">

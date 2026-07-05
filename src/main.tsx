@@ -3,6 +3,10 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 import { I18nProvider } from "./i18n";
+import { initAttribution } from "./lib/attribution";
+
+// First-touch attribution capture: UTMs, GCLID, FBCLID → cookie (90d) + storage.
+initAttribution();
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
