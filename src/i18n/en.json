@@ -370,5 +370,35 @@
     "compliance": "Security and compliance",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy"
+  },
+  "pains": {
+    "kicker": "Your daily pain points",
+    "title": "Full schedule, thin margins and a scanner at its limit.",
+    "subtitle": "TurboMR removes the MRI bottleneck with no new scanner and no construction work.",
+    "items": [
+      {
+        "title": "Long waiting lists",
+        "desc": "Patients waiting weeks for a scan — and moving to the competition."
+      },
+      {
+        "title": "High cost per exam",
+        "desc": "Every minute of room time burns margin: energy, staff and scanner time."
+      },
+      {
+        "title": "Motion-related repeats",
+        "desc": "Long scans create artifacts, rescans and rework for techs and radiologists."
+      },
+      {
+        "title": "Heavy CAPEX",
+        "desc": "Replacing the scanner costs millions. Expanding capacity doesn't have to."
+      }
+    ],
+    "gainTitle": "What changes with TurboMR",
+    "gains": [
+      "Up to 50% less time per exam",
+      "More exams per day on the same scanner",
+      "Sharper images, fewer rescans",
+      "On-premise install, no construction, no new scanner"
+    ]
   }
 }

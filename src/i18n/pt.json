@@ -412,5 +412,35 @@
     "privacy": "Política de Privacidade",
     "tagline": "Inteligência Artificial para Ressonância Magnética. Exames mais rápidos, imagens mais nítidas, operação escalável.",
     "commercial": "Portal Comercial"
+  },
+  "pains": {
+    "kicker": "Suas dores no dia a dia",
+    "title": "Agenda cheia, margem apertada e equipamento no limite.",
+    "subtitle": "A TurboMR resolve o gargalo da ressonância sem trocar equipamento e sem obra.",
+    "items": [
+      {
+        "title": "Fila de espera longa",
+        "desc": "Pacientes esperando semanas por um exame — e migrando para o concorrente."
+      },
+      {
+        "title": "Custo por exame alto",
+        "desc": "Cada minuto de sala ocupada consome margem: energia, equipe e tempo de máquina."
+      },
+      {
+        "title": "Repetição por movimento",
+        "desc": "Exames longos geram artefato, refação e retrabalho do técnico e do radiologista."
+      },
+      {
+        "title": "Investimento pesado em CAPEX",
+        "desc": "Trocar a máquina custa milhões. Ampliar a capacidade não precisa custar isso."
+      }
+    ],
+    "gainTitle": "O que muda com a TurboMR",
+    "gains": [
+      "Até 50% menos tempo por exame",
+      "Mais exames por dia no mesmo equipamento",
+      "Imagens mais nítidas, menos refação",
+      "Instalação local, sem obra e sem trocar máquina"
+    ]
   }
 }

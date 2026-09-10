@@ -370,5 +370,35 @@
     "compliance": "Seguridad y regulación",
     "rights": "Todos los derechos reservados.",
     "privacy": "Política de Privacidad"
+  },
+  "pains": {
+    "kicker": "Tus dolores del día a día",
+    "title": "Agenda llena, margen ajustado y equipo al límite.",
+    "subtitle": "TurboMR resuelve el cuello de botella de la resonancia sin cambiar el equipo ni hacer obras.",
+    "items": [
+      {
+        "title": "Listas de espera largas",
+        "desc": "Pacientes esperando semanas por un examen — y migrando a la competencia."
+      },
+      {
+        "title": "Costo por examen elevado",
+        "desc": "Cada minuto de sala consume margen: energía, equipo y tiempo de máquina."
+      },
+      {
+        "title": "Repeticiones por movimiento",
+        "desc": "Exámenes largos generan artefactos, repeticiones y retrabajo."
+      },
+      {
+        "title": "CAPEX pesado",
+        "desc": "Cambiar la máquina cuesta millones. Ampliar la capacidad no tiene por qué."
+      }
+    ],
+    "gainTitle": "Qué cambia con TurboMR",
+    "gains": [
+      "Hasta 50% menos tiempo por examen",
+      "Más exámenes por día en el mismo equipo",
+      "Imágenes más nítidas, menos repeticiones",
+      "Instalación local, sin obra ni cambio de equipo"
+    ]
   }
 }
