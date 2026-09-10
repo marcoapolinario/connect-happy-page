@@ -4,99 +4,93 @@
 
 @layer base {
   :root {
-    /* Deep Navy Healthcare — TurboMR */
-    --background: 212 60% 10%;          /* #0a1828 */
-    --foreground: 210 30% 98%;
+    /* TurboMR — Light Brand System (white base + deep navy sections) */
+    --background: 0 0% 100%;
+    --foreground: 214 69% 14%;          /* #0B1F3B */
 
-    --card: 211 55% 13%;                /* #0d1f33 */
-    --card-foreground: 210 30% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 214 69% 14%;
 
-    --popover: 211 55% 13%;
-    --popover-foreground: 210 30% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 69% 14%;
 
-    /* Cyan primary (accent + glow) */
-    --primary: 189 94% 43%;             /* cyan-500 */
-    --primary-foreground: 212 60% 10%;  /* navy */
-    --primary-glow: 187 86% 53%;        /* cyan-400 */
+    /* Turbo Blue */
+    --primary: 203 100% 50%;            /* #009CFF */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 197 100% 65%;       /* #4CCBFF */
 
-    --secondary: 211 50% 18%;           /* #122840 */
-    --secondary-foreground: 210 30% 98%;
+    /* Deep navy — used for dark sections */
+    --secondary: 214 69% 14%;           /* #0B1F3B */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 211 45% 16%;
-    --muted-foreground: 215 20% 70%;    /* slate-400 */
+    --muted: 212 32% 94%;               /* #E9EEF5 */
+    --muted-foreground: 214 18% 42%;
 
-    --accent: 174 80% 50%;              /* emerald-cyan blend */
-    --accent-foreground: 212 60% 10%;
+    --accent: 197 100% 65%;
+    --accent-foreground: 214 69% 14%;
 
-    --success: 160 75% 45%;
-    --success-foreground: 212 60% 10%;
+    --success: 160 72% 38%;
+    --success-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 60%;
+    --destructive: 0 75% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 22%;              /* ~white/10 on navy */
-    --input: 211 50% 18%;
-    --ring: 189 94% 43%;
+    --border: 212 28% 88%;
+    --input: 212 28% 88%;
+    --ring: 203 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;
 
-    --sidebar-background: 211 55% 13%;
-    --sidebar-foreground: 210 30% 90%;
-    --sidebar-primary: 189 94% 43%;
-    --sidebar-primary-foreground: 212 60% 10%;
-    --sidebar-accent: 211 50% 18%;
-    --sidebar-accent-foreground: 210 30% 98%;
-    --sidebar-border: 210 30% 22%;
-    --sidebar-ring: 189 94% 43%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 214 69% 14%;
+    --sidebar-primary: 203 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 212 32% 94%;
+    --sidebar-accent-foreground: 214 69% 14%;
+    --sidebar-border: 212 28% 88%;
+    --sidebar-ring: 203 100% 50%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(212 65% 8%) 0%, hsl(211 55% 13%) 50%, hsl(195 70% 18%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(189 94% 43%), hsl(174 80% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(187 86% 53%), hsl(160 75% 50%));
-    --gradient-text: linear-gradient(135deg, hsl(187 86% 60%), hsl(160 75% 55%));
-    --gradient-radial: radial-gradient(circle at center, hsl(189 94% 50% / 0.28), transparent 65%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.06), hsl(0 0% 100% / 0.02));
+    --gradient-hero: linear-gradient(135deg, hsl(214 72% 10%) 0%, hsl(214 69% 14%) 55%, hsl(206 80% 20%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(203 100% 50%), hsl(197 100% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(197 100% 65%), hsl(203 100% 50%));
+    --gradient-text: linear-gradient(135deg, hsl(203 100% 50%), hsl(197 100% 66%));
+    --gradient-radial: radial-gradient(circle at center, hsl(203 100% 50% / 0.18), transparent 65%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.08), hsl(0 0% 100% / 0.02));
 
-    --shadow-glow: 0 0 32px hsl(189 94% 43% / 0.35), 0 0 80px hsl(189 94% 43% / 0.15);
-    --shadow-glow-strong: 0 0 40px hsl(189 94% 43% / 0.55), 0 0 100px hsl(189 94% 43% / 0.25);
-    --shadow-elegant: 0 24px 60px -20px hsl(0 0% 0% / 0.55);
-    --shadow-card: 0 8px 30px -12px hsl(0 0% 0% / 0.45);
+    --shadow-glow: 0 10px 30px -10px hsl(203 100% 50% / 0.45);
+    --shadow-glow-strong: 0 16px 44px -12px hsl(203 100% 50% / 0.55);
+    --shadow-elegant: 0 24px 60px -28px hsl(214 69% 14% / 0.35);
+    --shadow-card: 0 6px 24px -14px hsl(214 69% 14% / 0.22);
   }
 
-  /* keep .dark identical so any toggled component still resolves */
-  .dark { color-scheme: dark; }
+  .dark { color-scheme: light; }
 }
 
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; color-scheme: dark; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; color-scheme: light; }
   html, body { @apply overflow-x-hidden; max-width: 100%; }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
   h1, h2, h3, h4 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     @apply tracking-tight;
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
   img, video { max-width: 100%; height: auto; }
 
-  /* Inputs: refined focus ring with cyan glow */
-  input, textarea, select {
-    @apply transition-colors;
-  }
+  input, textarea, select { @apply transition-colors; }
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     box-shadow: 0 0 0 3px hsl(var(--primary) / 0.18);
   }
 
-  /* Selection */
-  ::selection { background: hsl(var(--primary) / 0.3); color: hsl(var(--foreground)); }
+  ::selection { background: hsl(var(--primary) / 0.18); color: hsl(var(--foreground)); }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-track { background: hsl(var(--muted)); }
   ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 8px; }
   ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.6); }
 }
@@ -118,14 +112,14 @@
 
   .grid-pattern {
     background-image:
-      linear-gradient(hsl(var(--primary) / 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--primary) / 0.06) 1px, transparent 1px);
+      linear-gradient(hsl(var(--primary) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.07) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(24px);
     transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
@@ -139,34 +133,26 @@
     border-color: hsl(var(--primary) / 0.35);
   }
 
-  .hover-glow {
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-  }
-  .hover-glow:hover {
-    box-shadow: var(--shadow-glow-strong);
-    transform: translateY(-1px);
-  }
+  .hover-glow { transition: box-shadow 0.3s ease, transform 0.2s ease; }
+  .hover-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-1px); }
 
+  /* On light surfaces: clean elevated card. Inside dark sections: translucent. */
   .glass-card {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsl(0 0% 100% / 0.08);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
   }
 
   .glass-dark {
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.04), hsl(0 0% 100% / 0.01));
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.08), hsl(0 0% 100% / 0.02));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid hsl(0 0% 100% / 0.08);
+    border: 1px solid hsl(0 0% 100% / 0.14);
   }
 
   .radial-glow { background: var(--gradient-radial); }
 
-  /* Live status dot (pulse ping) */
-  .live-dot {
-    @apply relative inline-flex h-2 w-2;
-  }
+  .live-dot { @apply relative inline-flex h-2 w-2; }
   .live-dot::before {
     content: "";
     @apply absolute inline-flex h-full w-full rounded-full bg-primary opacity-75;
@@ -177,9 +163,8 @@
     @apply relative inline-flex h-2 w-2 rounded-full bg-primary;
   }
 
-  /* Status pill — used across hero/sections */
   .status-pill {
-    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider uppercase;
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-semibold tracking-wider uppercase;
   }
 
   .story-link {

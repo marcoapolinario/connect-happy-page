@@ -26,6 +26,7 @@ import {
   Sparkles, Clock, Stethoscope, MessageCircle, ArrowRight, BarChart3,
   Menu, X, ShieldCheck, FileCheck, Lock, ExternalLink,
   Mail, Phone, Linkedin, Instagram, Youtube, Building2, HeartPulse, UserRound, Briefcase,
+  Timer, DollarSign, RefreshCw, Wallet,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -255,6 +256,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* PAINS — foco nas dores do cliente */}
+      <section id="dores" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <Reveal className="max-w-2xl mb-12 sm:mb-14">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">{t("pains.kicker")}</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t("pains.title")}</h2>
+            <p className="text-base sm:text-lg text-muted-foreground">{t("pains.subtitle")}</p>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4 sm:gap-5">
+              {(t("pains.items") as any[]).map((p, i) => {
+                const Icon = [Timer, DollarSign, RefreshCw, Wallet][i];
+                return (
+                  <Reveal key={i} delay={i * 100}>
+                    <Card className="p-6 h-full border-border/70 shadow-card hover-lift">
+                      <div className="w-11 h-11 rounded-xl bg-muted flex items-center justify-center mb-4">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h3 className="font-bold text-base mb-2">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                    </Card>
+                  </Reveal>
+                );
+              })}
+            </div>
+
+            <Reveal delay={200}>
+              <div className="h-full rounded-2xl bg-secondary text-white p-7 sm:p-8 shadow-elegant">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-semibold uppercase tracking-wider mb-5">
+                  <Zap className="w-3.5 h-3.5 text-primary-glow" />
+                  TurboMR
+                </div>
+                <h3 className="text-2xl font-bold mb-6 leading-snug">{t("pains.gainTitle")}</h3>
+                <ul className="space-y-4">
+                  {(t("pains.gains") as string[]).map((g) => (
+                    <li key={g} className="flex gap-3 text-sm text-white/80">
+                      <CheckCircle2 className="w-4 h-4 text-primary-glow shrink-0 mt-0.5" />
+                      <span>{g}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild className="mt-8 w-full gradient-primary text-white border-0 font-semibold hover:opacity-90">
+                  <a href={waLink(t("wa.demo"))} target="_blank" rel="noopener">
+                    <MessageCircle className="w-4 h-4" />
+                    {t("hero.ctaDemo")}
+                  </a>
+                </Button>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* PILLARS */}
       <section id="solucao" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -455,22 +510,31 @@ const Index = () => {
             <p className="text-base sm:text-lg text-muted-foreground">{t("flow.subtitle")}</p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
-            {(t("flow.steps") as any[]).map((step, i) => {
-              const Icon = flowIcons[i];
-              return (
-                <Reveal key={i} delay={i * 100}>
-                  <Card className="p-4 sm:p-5 h-full shadow-card hover-lift border-border/50">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                      <Icon className="w-5 h-5 text-primary" />
+          <div className="relative">
+            {/* linha conectora do infográfico (desktop) */}
+            <div className="hidden md:block absolute left-0 right-0 top-[46px] h-0.5 bg-gradient-to-r from-primary/10 via-primary/50 to-primary/10" />
+            <div className="relative grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-5">
+              {(t("flow.steps") as any[]).map((step, i) => {
+                const Icon = flowIcons[i];
+                return (
+                  <Reveal key={i} delay={i * 100}>
+                    <div className="h-full flex flex-col items-center text-center">
+                      <div className="relative w-[92px] h-[92px] rounded-2xl bg-card border border-border shadow-card flex items-center justify-center mb-5">
+                        <Icon className="w-8 h-8 text-primary" />
+                        <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full gradient-primary text-white text-xs font-bold flex items-center justify-center shadow-glow">
+                          {i + 1}
+                        </span>
+                      </div>
+                      <div className="text-[10px] font-bold text-primary uppercase tracking-wider mb-1">
+                        {t("flow.stage")} {i + 1}
+                      </div>
+                      <h3 className="font-bold text-sm sm:text-base mb-2">{step.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed max-w-[210px]">{step.desc}</p>
                     </div>
-                    <div className="text-[10px] sm:text-xs font-bold text-primary mb-1">{t("flow.stage")} {i + 1}</div>
-                    <h3 className="font-bold text-sm mb-2">{step.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
-                  </Card>
-                </Reveal>
-              );
-            })}
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 mt-8">
