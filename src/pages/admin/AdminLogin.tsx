@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, LogIn, UserPlus } from "lucide-react";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 
 const AdminLogin = () => {
   const { user, signIn, signUp, loading: authLoading } = useAuth();
@@ -64,7 +64,7 @@ const AdminLogin = () => {
       <Card className="w-full max-w-md p-8 border-primary/20 shadow-elegant">
         <div className="text-center mb-6">
           <Link to="/" className="inline-block mb-4">
-            <img src={logo} alt="TurboMR" className="h-12 w-auto mx-auto" />
+            <Logo symbolClassName="h-10" />
           </Link>
           <h1 className="text-2xl font-bold">{mode === "signin" ? "Entrar no Admin" : "Criar conta admin"}</h1>
           <p className="text-sm text-muted-foreground mt-1">

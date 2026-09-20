@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LogOut, LayoutDashboard, FileText, Users, Search } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 
 const items = [
   { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -27,7 +27,7 @@ export const AdminNav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <Link to="/" aria-label="Site">
-            <img src={logo} alt="TurboMR" className="h-9 w-auto" />
+            <Logo symbolClassName="h-8" />
           </Link>
           <span className="text-sm text-muted-foreground hidden sm:inline">/ Admin</span>
         </div>

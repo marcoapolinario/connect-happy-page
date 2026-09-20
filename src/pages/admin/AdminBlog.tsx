@@ -11,7 +11,7 @@ import { fetchAllPostsAdmin, type BlogPostWithCategory } from "@/lib/blog";
 import {
   Plus, Edit, Trash2, Eye, EyeOff, LogOut, Loader2, Search, ExternalLink,
 } from "lucide-react";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 
 const AdminBlog = () => {
   const { signOut, user } = useAuth();
@@ -75,7 +75,7 @@ const AdminBlog = () => {
       <header className="border-b border-border bg-background/95 backdrop-blur-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <Link to="/"><img src={logo} alt="TurboMR" className="h-10 w-auto" /></Link>
+            <Link to="/"><Logo symbolClassName="h-8" /></Link>
             <span className="text-sm text-muted-foreground hidden sm:inline">/ Admin</span>
           </div>
           <div className="flex items-center gap-2">
