@@ -733,6 +733,7 @@ const Index = () => {
       </section>
 
       {/* PROVEN RESULTS — IMAGE COMPARISONS */}
+      {SHOW_RESULTADOS && (
       <section id="resultados-imagens" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-5xl mx-auto">
 
@@ -755,6 +756,7 @@ const Index = () => {
           </Reveal>
         </div>
       </section>
+      )}
 
       {/* PRICING */}
       <section id="planos" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
