@@ -860,7 +860,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-12 mb-12">
             <div className="flex flex-col gap-5 shrink-0 md:max-w-xs">
-              <Logo variant="light" symbolClassName="h-11 w-11" wordmarkClassName="text-2xl" />
+              <Logo variant="light" symbolClassName="h-10 sm:h-11" />
               <p className="text-sm text-white/60 leading-relaxed">{t("footer.tagline")}</p>
               <Button asChild size="sm" className="self-start glass-dark text-white border-white/20 hover:bg-white/10">
                 <a href={COMERCIAL_URL} target="_blank" rel="noopener">

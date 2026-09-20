@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MessageCircle } from "lucide-react";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 
 const WHATSAPP = "551153043453";
 
@@ -10,7 +10,7 @@ export const BlogLayout = ({ children }: { children: React.ReactNode }) => (
     <header className="border-b border-border bg-background/90 backdrop-blur-xl sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
         <Link to="/" className="flex items-center group">
-          <img src={logo} alt="TurboMR" className="h-10 sm:h-12 w-auto object-contain" />
+          <Logo symbolClassName="h-8 sm:h-9" />
         </Link>
         <nav className="flex items-center gap-1 sm:gap-3">
           <Button asChild variant="ghost" size="sm">
@@ -28,8 +28,9 @@ export const BlogLayout = ({ children }: { children: React.ReactNode }) => (
       </div>
     </header>
     <main className="flex-1">{children}</main>
-    <footer className="border-t border-border py-6 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-muted-foreground">
+    <footer className="border-t border-white/10 py-7 bg-secondary">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-3 text-center text-xs text-white/60">
+        <Logo variant="light" symbolClassName="h-8 sm:h-9" />
         © {new Date().getFullYear()} TurboMR · <Link to="/" className="hover:text-primary">Voltar ao site</Link>
       </div>
     </footer>

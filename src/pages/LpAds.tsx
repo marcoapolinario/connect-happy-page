@@ -11,7 +11,7 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 import mriBefore from "@/assets/mri-before.jpg";
 import mriAfter from "@/assets/mri-after.jpg";
 import ogImage from "@/assets/og-lpads.jpg";
@@ -194,7 +194,7 @@ const LpAds = () => {
       {/* HEADER mínimo — sem menu pra reduzir fuga */}
       <header className="border-b border-border bg-background/90 backdrop-blur-xl sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <img src={logo} alt="TurboMR" className="h-10 sm:h-12 w-auto object-contain" />
+          <Logo symbolClassName="h-8 sm:h-9" />
           <Button asChild size="sm" variant="ghost" className="text-success hover:text-success">
             <a href={waLink(WA_MSG_HERO)} target="_blank" rel="noopener noreferrer" onClick={() => fireConversion("header_wa")}>
               <MessageCircle className="w-4 h-4" />
@@ -449,8 +449,9 @@ const LpAds = () => {
       </section>
 
       {/* FOOTER mínimo */}
-      <footer className="border-t border-border py-6 bg-background">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-white/10 py-7 bg-secondary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-3 text-center text-xs text-white/60">
+          <Logo variant="light" symbolClassName="h-8 sm:h-9" />
           © {new Date().getFullYear()} TurboMR · WhatsApp {WHATSAPP_DISPLAY}
         </div>
       </footer>

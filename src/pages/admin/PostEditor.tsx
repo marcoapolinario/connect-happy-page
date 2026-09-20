@@ -14,7 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { fetchCategories, slugify, calcReadingMinutes, type BlogCategory } from "@/lib/blog";
 import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
 import { ArrowLeft, Save, Loader2, Eye, Edit } from "lucide-react";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 
 const PostEditor = () => {
   const { id } = useParams<{ id: string }>();
@@ -122,7 +122,7 @@ const PostEditor = () => {
       <header className="border-b border-border bg-background/95 backdrop-blur-xl sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <Link to="/"><img src={logo} alt="TurboMR" className="h-10 w-auto" /></Link>
+            <Link to="/"><Logo symbolClassName="h-8" /></Link>
             <Button asChild size="sm" variant="ghost">
               <Link to="/admin/blog"><ArrowLeft className="w-4 h-4" /><span className="hidden sm:inline">Voltar</span></Link>
             </Button>

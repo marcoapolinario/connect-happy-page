@@ -12,7 +12,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useI18n } from "@/i18n";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import logo from "@/assets/turbomr-logo-upload.png";
+import { Logo } from "@/components/Logo";
 import {
   TrendingUp, DollarSign, HeartPulse, Clock, Sparkles,
   CheckCircle2, ArrowLeft, Loader2,
@@ -118,7 +118,7 @@ const Lp = () => {
       <header className="border-b border-border bg-background sticky top-0 z-40 backdrop-blur-xl bg-background/90">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
           <Link to="/" className="flex items-center group min-w-0" aria-label="TurboMR">
-            <img src={logo} alt="TurboMR" className="h-10 sm:h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105" />
+            <Logo symbolClassName="h-8 sm:h-10 lg:h-11 transition-transform group-hover:scale-105" />
           </Link>
           <div className="flex items-center gap-2">
             <Button asChild variant="ghost" size="sm">
@@ -277,8 +277,9 @@ const Lp = () => {
       </section>
 
       {/* FOOTER mínimo */}
-      <footer className="border-t border-border py-6 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-white/10 py-7 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-3 text-center text-xs text-white/60">
+          <Logo variant="light" symbolClassName="h-8 sm:h-9" />
           © {new Date().getFullYear()} TurboMR
         </div>
       </footer>
