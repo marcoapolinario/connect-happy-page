@@ -39,7 +39,7 @@ const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 const statIcons = [Zap, Sparkles, Server, TrendingUp];
-const statValues = ["50%", "Ultra", "Zero", "+40%"];
+const statValues = ["50%", "Ultra", "Zero", "+50%"]; 
 const statLabelKeys = ["stats.faster", "stats.resolution", "stats.noEquipment", "stats.capacity"];
 
 const pillarIcons = [Zap, Sparkles, TrendingUp];
