@@ -135,10 +135,10 @@ const Index = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild size="sm" variant="ghost" className="hidden md:inline-flex font-medium">
+            <Button asChild size="sm" className="hidden md:inline-flex bg-primary text-white shadow-glow hover:opacity-90 border-0 font-semibold">
               <a href={waLink(t("wa.header"))} target="_blank" rel="noopener">
                 <MessageCircle className="w-4 h-4" />
-                {t("common.whatsapp")}
+                {t("common.contrate")}
               </a>
             </Button>
             <Button asChild size="sm" className="gradient-primary text-white shadow-glow hover:opacity-90 border-0 font-semibold">
