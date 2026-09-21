@@ -10,7 +10,8 @@
     "blog": "Blog"
   },
   "common": {
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "contrate": "Get Started"
   },
   "wa": {
     "header": "Hello! I'd like to learn about TurboMR.",
