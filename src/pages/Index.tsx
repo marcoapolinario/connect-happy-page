@@ -34,6 +34,8 @@ const WHATSAPP_NUMBER = "551153043453";
 const WHATSAPP_DISPLAY = "(11) 5304-3453";
 const APP_URL = "https://app.turbomr.com";
 const COMERCIAL_URL = "https://comercial.turbomr.com";
+// Oculta a seção "Resultados Comprovados em Imagens" — mudar para true para exibir novamente.
+const SHOW_RESULTADOS = false;
 const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
