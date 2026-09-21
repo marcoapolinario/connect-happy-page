@@ -5,7 +5,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { ResultsShowcase } from "@/components/ResultsShowcase";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
 import { NeuralWave } from "@/components/NeuralWave";
 import { useI18n } from "@/i18n";
@@ -60,11 +59,8 @@ const cases = [
 
 const navLinks = [
   { href: "#solucao", key: "nav.solucao" },
-  { href: "#tecnologia", key: "nav.comoFunciona" },
-  { href: "#beneficios", key: "nav.beneficios" },
   { href: "#casos", key: "nav.resultados" },
   { href: "/blog", key: "nav.blog" },
-  { href: "#contato", key: "nav.contato" },
 ];
 
 const audienceBenefits = [
@@ -139,7 +135,6 @@ const Index = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <LanguageSwitcher />
             <Button asChild size="sm" variant="ghost" className="hidden md:inline-flex font-medium">
               <a href={waLink(t("wa.header"))} target="_blank" rel="noopener">
                 <MessageCircle className="w-4 h-4" />
